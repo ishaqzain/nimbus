@@ -20,7 +20,7 @@ export default {
      */
     type: {
       type: String,
-      default: "a"
+      default: "a",
     },
     /**
      * The button size used for the button.
@@ -28,9 +28,9 @@ export default {
      */
     size: {
       type: String,
-      default:"default",
+      default: "default",
       validator: (value, getValue) => {
-        const validValue = ['default', 'small', 'large']
+        const validValue = ["default", "small", "large"]
 
         if (getValue) {
           return validValue
@@ -43,7 +43,7 @@ export default {
      */
     avatarUrl: {
       type: String,
-      default:"",
+      default: "",
     },
     /**
      * The src attribute specifies the URL (web address) of the image
@@ -62,37 +62,13 @@ export default {
   },
   computed: {
     avatarClasses() {
-        return [this.size ? `c-avatar--${this.size}` : ''];
-      },
-  }
+      return [this.size ? `c-avatar--${this.size}` : ""]
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-  .c-avatar {
-    display: inline-block;
-    vertical-align: middle;
-    overflow: hidden;
-    width: 36px;
-    height: 36px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    &__image{
-      display: block;
-      width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-      border-radius: 50%;
-    }
-    &--small{
-      width: 30px;
-      height: 30px;
-    }
-    &--large{
-      width: 60px;
-      height: 60px;
-    }
-  }
+<style src="./Avatar.style.scss" lang="scss" scoped>
 </style>
 
 <docs>

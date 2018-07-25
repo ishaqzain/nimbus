@@ -19,95 +19,95 @@
 $url-image: "../../assets/images";
 
 // Variable(s)
-$btn-border-width:              1px !default;
-$btn-ghost-border-width:        2px !default;
+$btn-border-width: 1px !default;
+$btn-ghost-border-width: 2px !default;
 
-$btn-font-weight:               700 !default;
-$btn-font-size:                 $global-font-size !default;
-$btn-font-size--tiny:           12px !default;
-$btn-font-size--small:          12px !default;
-$btn-font-size--large:          16px !default;
+$btn-font-weight: 700 !default;
+$btn-font-size: $global-font-size !default;
+$btn-font-size--tiny: 12px !default;
+$btn-font-size--small: 12px !default;
+$btn-font-size--large: 16px !default;
 
-$btn-height:                    36px !default;
-$btn-height--tiny:              24px !default;
-$btn-height--small:             30px !default;
-$btn-height--large:             42px !default;
+$btn-height: 36px !default;
+$btn-height--tiny: 24px !default;
+$btn-height--small: 30px !default;
+$btn-height--large: 42px !default;
 
-$enable-btn--tiny:              false !default;
-$enable-btn--small:             false !default;
-$enable-btn--large:             false !default;
+$enable-btn--tiny: false !default;
+$enable-btn--small: false !default;
+$enable-btn--large: false !default;
 
-$enable-btn--narrow:            false !default;
+$enable-btn--narrow: false !default;
 
-$enable-btn--square:            false !default;
-$enable-btn--pill:              false !default;
-$enable-btn--block:             false !default;
-$enable-btn--farleft-icon:      false !default;
+$enable-btn--square: false !default;
+$enable-btn--pill: false !default;
+$enable-btn--block: false !default;
+$enable-btn--farleft-icon: false !default;
 
-$enable-btn--ghost:             false !default;
-$enable-btn--naked:             false !default;
-$enable-btn--semi-naked:        false !default;
+$enable-btn--ghost: false !default;
+$enable-btn--naked: false !default;
+$enable-btn--semi-naked: false !default;
 
-$enable-btn--tag:               false !default;
+$enable-btn--tag: false !default;
 
-$btn-default-bg-color:          $global-color-sand-light !default;
-$btn-default-bg-color--hover:   $global-color-sand !default;
-$btn-default-bg-color--active:  $global-color-ash-light !default;
-$btn-default-text-color:        $global-color-black !default;
+$btn-default-bg-color: $global-color-sand-light !default;
+$btn-default-bg-color--hover: $global-color-sand !default;
+$btn-default-bg-color--active: $global-color-ash-light !default;
+$btn-default-text-color: $global-color-black !default;
 $btn-default-text-color--hover: $global-color-red-brand !default;
 
-$btn-red-bg-color:              $global-color-red-brand !default;
-$btn-red-bg-color--hover:       $global-color-red-dark !default;
-$btn-red-bg-color--active:      $global-color-red-super-dark !default;
-$btn-red-text-color:            $global-color-white !default;
-$enable-btn--red:               false !default;
+$btn-red-bg-color: $global-color-red-brand !default;
+$btn-red-bg-color--hover: $global-color-red-dark !default;
+$btn-red-bg-color--active: $global-color-red-super-dark !default;
+$btn-red-text-color: $global-color-white !default;
+$enable-btn--red: false !default;
 
-$btn-green-bg-color:            $global-color-green !default;
-$btn-green-bg-color--hover:     $global-color-green-dark !default;
-$btn-green-bg-color--active:    $global-color-green-super-dark !default;
-$btn-green-text-color:          $global-color-white !default;
-$enable-btn--green:             false !default;
+$btn-green-bg-color: $global-color-green !default;
+$btn-green-bg-color--hover: $global-color-green-dark !default;
+$btn-green-bg-color--active: $global-color-green-super-dark !default;
+$btn-green-text-color: $global-color-white !default;
+$enable-btn--green: false !default;
 
-$btn-yellow-bg-color:           $global-color-yellow !default;
-$btn-yellow-bg-color--hover:    $global-color-yellow-dark !default;
-$btn-yellow-bg-color--active:   $global-color-yellow-super-dark !default;
-$btn-yellow-text-color:         $global-color-black !default;
-$enable-btn--yellow:            false !default;
+$btn-yellow-bg-color: $global-color-yellow !default;
+$btn-yellow-bg-color--hover: $global-color-yellow-dark !default;
+$btn-yellow-bg-color--active: $global-color-yellow-super-dark !default;
+$btn-yellow-text-color: $global-color-black !default;
+$enable-btn--yellow: false !default;
 
-$btn-black-bg-color:           lighten($global-color-black, 10%) !default;
-$btn-black-bg-color--hover:    $global-color-black !default;
-$btn-black-bg-color--active:   $global-color-black !default;
-$btn-black-text-color:         $global-color-white !default;
-$enable-btn--black:            true !default;
+$btn-black-bg-color: lighten($global-color-black, 10%) !default;
+$btn-black-bg-color--hover: $global-color-black !default;
+$btn-black-bg-color--active: $global-color-black !default;
+$btn-black-text-color: $global-color-white !default;
+$enable-btn--black: true !default;
 
-$btn-white-bg-color:            $global-color-white !default;
-$btn-white-bg-color--hover:     $global-color-white !default;
-$btn-white-bg-color--active:    $global-color-white !default;
-$btn-white-border-color:        $global-color-ash-light !default;
+$btn-white-bg-color: $global-color-white !default;
+$btn-white-bg-color--hover: $global-color-white !default;
+$btn-white-bg-color--active: $global-color-white !default;
+$btn-white-border-color: $global-color-ash-light !default;
 $btn-white-border-color--hover: $global-color-ash-dark !default;
-$btn-white-text-color:          $global-color-charcoal !default;
-$enable-btn--white:             true !default;
+$btn-white-text-color: $global-color-charcoal !default;
+$enable-btn--white: true !default;
 
-$btn-pink-bg-color:             $global-color-pink-coral !default;
-$btn-pink-bg-color--hover:      color-level($btn-pink-bg-color, -1) !default;
-$btn-pink-bg-color--active:     color-level($btn-pink-bg-color, -2) !default;
-$btn-pink-text-color:           $global-color-white !default;
-$enable-btn--pink:              false !default;
+$btn-pink-bg-color: $global-color-pink-coral !default;
+$btn-pink-bg-color--hover: color-level($btn-pink-bg-color, -1) !default;
+$btn-pink-bg-color--active: color-level($btn-pink-bg-color, -2) !default;
+$btn-pink-text-color: $global-color-white !default;
+$enable-btn--pink: false !default;
 
-$btn-online-badge-offline:      $global-color-ash-light !default;
-$btn-online-badge-online:       $global-color-green !default;
+$btn-online-badge-offline: $global-color-ash-light !default;
+$btn-online-badge-online: $global-color-green !default;
 
-$btn-check-active-bg-color:     $global-color-white !default;
+$btn-check-active-bg-color: $global-color-white !default;
 $btn-check-active-border-color: $global-color-red-brand !default;
-$btn-check-active-text-color:   $global-color-black !default;
+$btn-check-active-text-color: $global-color-black !default;
 
-$enable-btn--disabled:          false !default;
+$enable-btn--disabled: false !default;
 
-$btn-spinner-size:              28px;
-$btn-spinner-size--tiny:        20px;
-$btn-spinner-size--small:       24px;
-$btn-spinner-size--large:       32px;
-$enable-btn--spinner:           false !default;
+$btn-spinner-size: 28px;
+$btn-spinner-size--tiny: 20px;
+$btn-spinner-size--small: 24px;
+$btn-spinner-size--large: 32px;
+$enable-btn--spinner: false !default;
 //
 // Private variable only, do not alter anything below!
 // ==========================================================================
@@ -148,10 +148,7 @@ $btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn
   cursor: pointer; // 4
   overflow: visible; // 5
   border-radius: $global-border-radius;
-  transition:
-    color .3s ease-out,
-    opacity .3s ease-out,
-    background .3s ease-out;
+  transition: color 0.3s ease-out, opacity 0.3s ease-out, background 0.3s ease-out;
   border-width: $btn-border-width;
   border-style: solid;
   border-color: $btn-default-bg-color--active;
@@ -476,7 +473,7 @@ $btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn
     &:hover,
     &:focus,
     &:active {
-      opacity: .32; // 1
+      opacity: 0.32; // 1
       cursor: not-allowed; // 2
       // color: $global-color-black;
     }
@@ -873,7 +870,7 @@ $btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn
       opacity: 0;
       position: absolute;
       top: 0;
-      transition: opacity .3s;
+      transition: opacity 0.3s;
       width: 100%;
 
       &::before {
@@ -888,7 +885,7 @@ $btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn
 
     &__text {
       opacity: 1;
-      transition: opacity .3s;
+      transition: opacity 0.3s;
     }
 
     &.is-active {
@@ -974,4 +971,3 @@ $btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn
     }
   }
 }
-

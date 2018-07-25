@@ -1,10 +1,5 @@
 <template>
-  <component class="c-btn"
-    :is="type" 
-    :class="buttonClasses" 
-    :disabled="disabled" 
-    @click="handleClick"
-  >
+  <component class="c-btn" :is="type" :class="buttonClasses" :disabled="disabled" @click="handleClick">
     <template v-if="hasSpinner">
       <i class="c-btn--spinner__icon"></i>
       <span class="c-btn--spinner__text">
@@ -19,7 +14,7 @@
   
 </template>
 <script>
-  /**
+/**
  * Headings are used as the titles of each major section of a page in the
  * interface. For example, templates generally use headings as their title.
  * Heading element provides an option to change the level of the heading.
@@ -42,15 +37,7 @@ export default {
      */
     size: {
       type: String,
-      default: 'default',
-      validator: (value, getValue) => {
-        const validValue = ['tiny', 'small', 'large', 'default']
-
-        if (getValue) {
-          return validValue
-        }
-        return validValue.indexOf(value) !== -1
-      },
+      default: "",
     },
     /**
      * The button color used for the button.
@@ -58,15 +45,7 @@ export default {
      */
     color: {
       type: String,
-      default: 'default',
-      validator: (value, getValue) => {
-        const validValue = ['red', 'green', 'yellow', 'pink', 'default']
-
-        if (getValue) {
-          return validValue
-        }
-        return validValue.indexOf(value) !== -1
-      },
+      default: "",
     },
     /**
      * The button shape used for the button.
@@ -74,15 +53,7 @@ export default {
      */
     shape: {
       type: String,
-      default: 'default',
-      validator: (value, getValue) => {
-        const validValue = ['square', 'pill', 'block', 'default']
-
-        if (getValue) {
-          return validValue
-        }
-        return validValue.indexOf(value) !== -1
-      },
+      default: "",
     },
     /**
      * Whether the form input field is disabled or not.
@@ -116,33 +87,34 @@ export default {
   computed: {
     buttonClasses() {
       return [
-        this.size ? `c-btn--${this.size}` : '',
-        this.shape ? `c-btn--${this.shape}` : '',
-        this.color ? `c-btn--${this.color}` : '',
-        this.isGhost ? 'c-btn--ghost' : '',
-        this.hasSpinner ? 'c-btn--spinner' : '',
-        this.activated || this.isActive ? 'is-active' : '',
-      ];
+        this.size ? `c-btn--${this.size}` : "",
+        this.shape ? `c-btn--${this.shape}` : "",
+        this.color ? `c-btn--${this.color}` : "",
+        this.isGhost ? "c-btn--ghost" : "",
+        this.hasSpinner ? "c-btn--spinner" : "",
+        this.activated || this.isActive ? "is-active" : "",
+      ]
     },
     isDisabledBtn() {
-      return this.disabled || this.isDisabled;
+      return this.disabled || this.isDisabled
     },
   },
   methods: {
     handleClick() {
       if (this.disabledAfterClick) {
-        this.isDisabled = true;
+        this.isDisabled = true
       }
       if (this.hasSpinner) {
-        this.isActive = true;
+        this.isActive = true
       }
-      this.$emit('clicked');
+      this.$emit("clicked")
     },
   },
-};
+}
 </script>
 
-<style src="./_styles/Button.style.scss" lang="scss" scoped></style>
+<style src="./Button.style.scss" lang="scss" scoped>
+</style>
 
 <docs>
   ```jsx

@@ -5,7 +5,7 @@
       {name: 'Documentation', href: 'http://localhost:6060/'}
     ]"/>
     <wrapper>
-      <heading level="h1">Sirius</heading>
+      <heading level="h1">Nimbus</heading>
       <text-style><a href="https://vueds.com">Vue Design System</a> is an open-source tool for building design systems with Vue.js. It provides you and your team a set of organized tools, patterns &amp; practices. It works as the foundation for your application development.</text-style>
     </wrapper>
   </component>
@@ -17,10 +17,10 @@
  */
 export default {
   name: "Index",
-  status: "deprecated",
+  status: "prototype",
   release: "1.0.0",
   metaInfo: {
-    title: "Vue Design System",
+    title: "Nimbus - Vue Design System",
     htmlAttrs: {
       lang: "en",
     },

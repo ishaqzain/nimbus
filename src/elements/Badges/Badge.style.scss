@@ -1,0 +1,40 @@
+.c-badge {
+  font-size: 12px;
+  display: inline-table;
+  vertical-align: middle;
+  font-family: $font-family-text;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  background-color: #d71149;
+  color: #fff;
+  &__content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  &--green {
+    background-color: #87cc62;
+    color: #fff;
+  }
+  &--yellow {
+    background-color: #ffc53e;
+    color: #333;
+  }
+  &--pink {
+    background-color: #ff566a;
+    color: #fff;
+  }
+  &--small {
+    font-size: 10px;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+  }
+  &--large {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+  }
+}

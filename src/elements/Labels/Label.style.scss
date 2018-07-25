@@ -1,0 +1,64 @@
+.c-label,
+.c-label:hover,
+.c-label:focus {
+  text-decoration: none;
+}
+.c-label,
+.c-label:hover,
+.c-label:focus {
+  color: #333;
+}
+.c-label {
+  font-family: $font-family-text;
+  font-size: 10px;
+  border-color: #ddd;
+  background-color: #fafafa;
+  line-height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 18px;
+  margin: 0;
+  padding: 1px 6px;
+  overflow: visible;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.c-label--red,
+.c-label--red:hover,
+.c-label--red:focus {
+  color: #fff;
+}
+.c-label--red {
+  border-color: #d71149;
+  background-color: #d71149;
+}
+.c-label--green,
+.c-label--green:hover,
+.c-label--green:focus {
+  color: #fff;
+}
+.c-label--green {
+  border-color: #87cc62;
+  background-color: #87cc62;
+}
+.c-label--yellow,
+.c-label--yellow:hover,
+.c-label--yellow:focus {
+  color: #333;
+}
+.c-label--yellow {
+  border-color: #ffc53e;
+  background-color: #ffc53e;
+}
+.c-label--pink,
+.c-label--pink:hover,
+.c-label--pink:focus {
+  color: #fff;
+}
+.c-label--pink {
+  border-color: #ff566a;
+  background-color: #ff566a;
+}
