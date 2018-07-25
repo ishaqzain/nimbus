@@ -1,0 +1,39 @@
+// ==========================================================================
+// Heights
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings:  false !default;
+$enable-column-height:      20, 22, 24, 26, 28, 30, 32, 36, 38, 40, 42, 46, 54, 56, 65, 61, 70, 73, 80, 96, 148, 163, 274 !default;
+$init-textarea-height:      36 !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+@each $section in $enable-column-height {
+  .u-height--#{$section} {
+    height: #{$section}px !important;
+  }
+}
+
+.u-height-textarea-1 {
+  min-height: #{$init-textarea-height}px;
+  height: #{$init-textarea-height}px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.u-height-1 {
+  height: 100% !important;
+}
+
+.u-height--auto {
+  height: auto !important;
+}
+
+.u-height--200 {
+  height: 200px !important;
+}

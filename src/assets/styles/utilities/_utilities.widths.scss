@@ -1,0 +1,36 @@
+// ==========================================================================
+// Widths
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings:  false !default;
+$enable-column-width:       2, 3, 4, 5, 8 !default;
+$enable-static-width:       100, 200, 200, 300, 400, 500, 600 !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+.u-width-auto {
+  width: auto !important;
+}
+
+.u-width-1 {
+  width: 100% !important;
+}
+
+@each $section in $enable-column-width {
+  @for $width from 1 through $section - 1 {
+    .u-width-#{$width}of#{$section} {
+      width: percentage($width / $section) !important;
+    }
+  }
+}
+
+@each $width in $enable-static-width {
+  .u-width--#{$width} {
+    width: #{$width}px !important;
+  }
+}

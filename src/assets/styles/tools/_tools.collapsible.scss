@@ -1,0 +1,13 @@
+@mixin collapsed ($duration) {
+  height: 0;
+  opacity: 0;
+  margin: 0;
+  max-height: 0;
+  transition: height $duration ease-in-out;
+}
+
+@mixin expand ($height) {
+  height: auto;
+  max-height: $height;
+  opacity: 1;
+}

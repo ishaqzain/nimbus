@@ -1,0 +1,70 @@
+// ==========================================================================
+// Visibility
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+// For screen reader only
+.u-visibility-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.#{$global-utility-namespace} {
+  &hidden {
+    display: none !important;
+  }
+
+  &invisible {
+    visibility: hidden !important;
+    opacity: 0;
+    transition: opacity .25s ease-out;
+  }
+
+  &hidden-small {
+    @include breakpoint("small-only") {
+      display: none;
+    }
+  }
+
+  &show-small {
+    display: none;
+
+    @include breakpoint("small-only") {
+      display: initial;
+    }
+  }
+
+  // on cart -_-, opacity can't be overriden on child
+  &partially-fade {
+    background: $global-color-sand-light !important;
+
+    // keep colors for icon and other exclusions
+    [data-opaque-css="disable"] {
+      color: inherit;
+    }
+
+    // fade
+    [data-opaque-css="fade"] {
+      opacity: .32;
+    }
+  }
+
+  &fully-fade {
+    background: $global-color-sand-light !important;
+    opacity: .32;
+  }
+}

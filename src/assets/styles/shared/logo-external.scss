@@ -1,0 +1,501 @@
+// ==========================================================================
+// Logo External
+// ==========================================================================
+@import "assets/styles/utilities";
+
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+$logo-external-operator-image: url("/images/desktop/logo-external/operators_10022017.png") !default;
+$logo-external-airline-image: url("/images/desktop/flight-airlines/airlines-logo-sprite-20170302.png") !default;
+// temporary for ab_payment_icon
+$logo-external-payment-and-logistic-image: url("/images/desktop/upload-product/external_logo_courier_240518.png") !default;
+$logo-external-mutual-fund-partner: url("/images/desktop/mutual-fund-partner.png") !default;
+$logo-external-bullion-partner: url("/images/desktop/bukaemas/icons/bukaemas_recurring.png") !default;
+$logo-external-trains: url("/images/desktop/logo-external/trains_04092017.png") !default;
+$logo-external-bpjs-foundation: url("/images/desktop/bpjs/bpjs-foundation.png") !default;
+$logo-external-courier-large: url("/images/desktop/logo-external/logo-courier-large-040418.png") !default;
+
+$operator-small-name:             ".#{$global-component-namespace}logo-external-operator--small";
+$operator-small-multiplier:       .7;
+
+$logo-external-operator-width:    90px;
+$logo-external-operator-height:   30px;
+
+$logo-external-operator-positions: (
+  tri: 32px 0,
+  axis: 23px -30px,
+  bolt: 4px -60px,
+  indosat: 15px -91px,
+  smartfren: 0 -121px,
+  telkomsel: 10px -151px,
+  xl: 25px -182px,
+  pln: 28px -211px
+) !default;
+
+$logo-external-operator-positions-center: (
+  tri: 0 0,
+  axis: 0 -30px,
+  bolt: 0 -60px,
+  indosat: 0 -91px,
+  smartfren: 0 -121px,
+  telkomsel: 0 -151px,
+  xl: 0 -182px,
+  pln: 0 -211px
+) !default;
+
+$logo-external-airline-positions: (
+  jetstar: 0,
+  airasia: 1,
+  airasia-x: 2,
+  garuda-indonesia: 3,
+  citilink: 4,
+  lion-air: 5,
+  malindo-air: 6,
+  kalstar: 7,
+  sriwijaya: 8,
+  tiger-air: 9,
+  thai-lion-air: 10,
+  batik-air: 11,
+  wings-air: 12,
+  nam-air: 13
+) !default;
+
+$logo-external-airline-bordered-positions: (
+  jetstar: 2px 1px,
+  airasia: 1px -32px,
+  airasia-x: 6px -62px,
+  garuda-indonesia: 2px -94px,
+  citilink: 2px -127px,
+  lion-air: 8px -158px,
+  malindo-air: 2px -191px,
+  kalstar: 6px -222px,
+  sriwijaya: 5px -253px,
+  tiger-air: 2px -288px,
+  thai-lion-air: 2px -318px,
+  batik-air: 2px -351px,
+  wings-air: 7px -383px,
+  nam-air: 7px -415px
+) !default;
+
+$logo-external-mutual-fund-partner-positions: (
+  bareksa: 0 5px,
+  cimb: 0 -42px,
+  mandiri: 0 -88px,
+) !default;
+
+$logo-external-trains-positions: (
+  kai: 0,
+) !default;
+
+$logo-external-bpjs-foundation-positions: (
+  bpjs-kesehatan: 0 0,
+) !default;
+
+.#{$global-component-namespace}logo-external {
+  @include m-margin(0 .5 .5 0);
+  @include m-width(12);
+  @include m-height(6);
+
+  background-color: $global-color-white;
+  background-image: $logo-external-payment-and-logistic-image;
+  background-repeat: no-repeat;
+  background-size: f-dimension(36);
+  display: block;
+  float: left;
+  text-indent: -9999px;
+
+  &--bordered {
+    @include m-margin(0 .5 .5 0);
+
+    display: block;
+    float: left;
+    border: 1px solid $global-color-sand;
+  }
+
+  &--bordered-sand {
+    border: 1px solid $global-color-sand;
+  }
+
+  &--bordered-sand-dark {
+    border: 1px solid $global-color-sand-dark;
+
+    .is-active & {
+      border-color: transparent;
+    }
+  }
+
+  &--shadow {
+    border: 2px solid #fff;
+    box-shadow: 0 6px 12px 1px rgba(177, 187, 203, .3);
+  }
+
+  &--small {
+    @include m-width(10);
+    @include m-height(5);
+
+    background-size: f-dimension(30);
+  }
+
+  &--inline {
+    float: none;
+    display: inline-block;
+  }
+
+  .c-panel__inner-title & {
+    margin: -3px 6px 12px 0;
+  }
+}
+
+$logo-external-bank-names: (
+  bca,
+  mandiri,
+  bni,
+  bri,
+  citibank,
+  cimb,
+  mega,
+  anz,
+  bukopin,
+  icb,
+  danamon,
+  icbc,
+  bii,
+  permata,
+  ocbc-nisp,
+  standard-chartered,
+  uob,
+  bni-syariah,
+  aeon,
+  hsbc,
+  qnb,
+  mnc,
+  panin,
+  sinarmas,
+  bsm,
+  briva,
+) !default;
+
+.#{$global-component-namespace}logo-external-bank {
+  @include m-width(10); // 60px
+  @include m-height(5); // 30px
+
+  background-size: f-dimension(10); // 60px
+  background-image: url("/images/external_banks_logo_221117.png");
+  background-repeat: no-repeat;
+  background-position: -99999px -99999px;
+  text-indent: -99999px;
+  display: inline-block;
+}
+
+@for $i from 1 through length($logo-external-bank-names) {
+  $bank: nth($logo-external-bank-names, $i);
+
+  .#{$global-component-namespace}logo-external-bank--#{$bank} {
+    background-position: 0 #{-($i - 1) * $global-desktop-spacing-unit * 5};
+  }
+}
+
+// position row and column of external logo couriers
+$logo-external-courier-positions: (
+  (jne, 0, 2),
+  (tiki, 1, 2),
+  (pos, 2, 2),
+  (rpx, 3, 2),
+  (wahana, 4, 2),
+  (sicepat, 5, 2),
+  (go-jek, 6, 2),
+  (go-send, 6, 2),
+  (ninjavan, 7, 2),
+  (ninja, 7, 2),
+  (jnt, 8, 2),
+  (sap, 9, 2),
+  (grab, 10, 2),
+  (pickup, 11, 2),
+  (pelapak, 12, 2)
+) !default;
+
+.#{$global-component-namespace}logo-external-courier {
+  @include m-width(12);
+  @include m-height(6);
+
+  background-image: $logo-external-payment-and-logistic-image;
+  background-repeat: no-repeat;
+  background-size: f-dimension(36);
+  display: inline-block;
+  text-indent: -99999px;
+}
+
+.#{$global-component-namespace}logo-external-courier-base {
+  @include m-width(12);
+  @include m-height(6);
+
+  background-image: $logo-external-payment-and-logistic-image;
+  background-repeat: no-repeat;
+  background-size: f-dimension(36);
+  zoom: 1.3;
+  display: inline-block;
+  text-indent: -99999px;
+}
+
+@each $courier, $row, $column in $logo-external-courier-positions {
+  .#{$global-component-namespace}logo-external-courier--#{$courier} {
+    background-position: #{$column * $global-desktop-spacing-unit * -12} #{$row * $global-desktop-spacing-unit * -6};
+  }
+}
+
+@each $courier, $row, $column in $logo-external-courier-positions {
+  .#{$global-component-namespace}logo-external-courier-base--#{$courier} {
+    background-position: #{$column * $global-desktop-spacing-unit * -12} #{$row * $global-desktop-spacing-unit * -6};
+  }
+}
+
+$logo-external-courier-large-names: (
+  jne,
+  tiki,
+  pos,
+  rpx,
+  wahana,
+  go-jek,
+  sicepat,
+  ninjavan,
+  jnt,
+  sap,
+  grab,
+  pickup,
+  pelapak
+) !default;
+
+.#{$global-component-namespace}logo-external-courier-large {
+  @include m-width(20);
+  @include m-height(12);
+
+  background-size: f-dimension(20);
+  background-image: $logo-external-courier-large;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+@for $i from 1 through length($logo-external-courier-large-names) {
+  $courier: nth($logo-external-courier-large-names, $i);
+
+  .#{$global-component-namespace}logo-external-courier-large--#{$courier} {
+    background-position: 0 #{-($i - 1) * $global-desktop-spacing-unit * 12};
+  }
+}
+
+.c-logo-external-courier--list {
+  @include m-margin(3, "bottom");
+
+  padding-left: 78px !important;
+  text-indent: 0;
+  position: relative;
+
+  &:hover {
+    background: $global-color-sand;
+  }
+
+  .c-logo-external-courier {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.#{$global-component-namespace}logo-external-operator {
+  display: inline-block;
+  width: $logo-external-operator-width;
+  height: $logo-external-operator-height;
+  overflow: hidden;
+  background: $logo-external-operator-image no-repeat;
+  background-size: 100% auto;
+  background-position: 0 9999px;
+  vertical-align: middle;
+
+  &--small {
+    width: #{$logo-external-operator-width * $operator-small-multiplier};
+    height: #{$logo-external-operator-height * $operator-small-multiplier};
+  }
+}
+
+@each $partner, $position in $logo-external-operator-positions {
+  .#{$global-component-namespace}logo-external-operator--op-#{$partner} {
+    background-position: $position;
+
+    &#{$operator-small-name} {
+      background-position: #{nth($position, 1) * $operator-small-multiplier} #{nth($position, 2) * $operator-small-multiplier};
+    }
+  }
+}
+
+@each $partner, $position in $logo-external-operator-positions-center {
+  .#{$global-component-namespace}logo-external-operator--center.#{$global-component-namespace}logo-external-operator--op-#{$partner} {
+    background-position: $position;
+  }
+}
+
+// position row and column of external logos
+$logo-external-positions: (
+  (bukadompet, 0, 0),
+  (bca-klikpay, 1, 0),
+  (mandiri-clickpay, 2, 0),
+  (mandiri-e-cash, 3, 0),
+  (cimb-clicks, 4, 0),
+  (visa, 5, 0),
+  (mastercard, 6, 0),
+  (indomaret, 7, 0),
+  (kredivo, 8, 0),
+  (akulaku, 9, 0),
+  (briva, 10, 0),
+  (bni-syariah, 11, 0),
+  (danamon, 12, 0),
+  (bca, 0, 1),
+  (mandiri, 1, 1),
+  (bni, 2, 1),
+  (bri, 3, 1),
+  (alfamart, 4, 1),
+  (alfamidi, 5, 1),
+  (lawson, 6, 1),
+  (dan-dan, 7, 1),
+  (jcb, 8, 1),
+  (bsm, 9, 1),
+  (permata, 10, 1),
+  (dana, 11, 1),
+  (pospay, 2, 2)
+) !default;
+
+@each $partner, $row, $column in $logo-external-positions {
+  .#{$global-component-namespace}logo-external--#{$partner} {
+    background-position: #{$column * $global-desktop-spacing-unit * -12} #{$row * $global-desktop-spacing-unit * -6};
+  }
+}
+
+@each $partner, $row, $column in $logo-external-positions {
+  .#{$global-component-namespace}logo-external-small--#{$partner} {
+    background-position: #{$column * $global-desktop-spacing-unit * -10} #{$row * $global-desktop-spacing-unit * -5};
+  }
+}
+
+.#{$global-component-namespace}logo-external-airline {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  background: $logo-external-airline-image no-repeat;
+  background-size: 100% auto;
+  background-position: 0 9999px;
+  vertical-align: middle;
+
+  &--small {
+    width: 36px;
+    height: 36px;
+  }
+
+  &--small-bordered {
+    width: 36px;
+    height: 36px;
+    background-size: 32px;
+  }
+}
+
+@each $airline, $position in $logo-external-airline-positions {
+  .#{$global-component-namespace}logo-external-airline--#{$airline} {
+    background-position: 0 #{-$position * 46px};
+
+    @at-root {
+      .#{$global-component-namespace}logo-external-airline--small#{&} {
+        background-position: 0 #{-$position * 36px};
+      }
+    }
+  }
+}
+
+@each $airline, $position in $logo-external-airline-bordered-positions {
+  .#{$global-component-namespace}logo-external-airline--#{$airline} {
+    @at-root {
+      .#{$global-component-namespace}logo-external-airline--small-bordered#{&} {
+        background-position: $position;
+      }
+    }
+  }
+}
+
+.#{$global-component-namespace}logo-external-mutual-fund {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background: $logo-external-mutual-fund-partner no-repeat;
+  background-size: 100% auto;
+  background-position: 0 9999px;
+  vertical-align: middle;
+}
+
+@each $partner, $position in $logo-external-mutual-fund-partner-positions {
+  .#{$global-component-namespace}logo-external-mutual-fund--#{$partner} {
+    background-position: $position;
+  }
+}
+
+.#{$global-component-namespace}logo-external-bullion {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background: $logo-external-bullion-partner no-repeat;
+  background-size: 100% auto;
+  vertical-align: middle;
+}
+
+.#{$global-component-namespace}logo-external-trains {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  background: $logo-external-trains no-repeat;
+  background-size: 100% auto;
+  background-position: 0 9999px;
+  vertical-align: middle;
+}
+
+@each $partner, $position in $logo-external-trains-positions {
+  .#{$global-component-namespace}logo-external-trains--#{$partner} {
+    background-position: 0 #{-$position + 9px};
+    background-size: 32px;
+  }
+}
+
+.#{$global-component-namespace}logo-external-bpjs {
+  display: inline-block;
+  overflow: hidden;
+  background: $logo-external-bpjs-foundation no-repeat;
+  background-size: 100% auto;
+  background-position: 0 9999px;
+  vertical-align: middle;
+
+  &--small {
+    height: rem-calc(36px);
+    width: rem-calc(36px);
+  }
+}
+
+@each $foundation, $position in $logo-external-bpjs-foundation-positions {
+  .#{$global-component-namespace}logo-external-bpjs--#{$foundation} {
+    background-position: $position;
+  }
+}
+
+.#{$global-component-namespace}logo-external-api {
+  display: inline-block;
+  overflow: hidden;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  vertical-align: middle;
+  height: rem-calc(36px);
+  width: rem-calc(36px);
+}

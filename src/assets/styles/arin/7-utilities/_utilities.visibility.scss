@@ -1,0 +1,21 @@
+// ==========================================================================
+// Simple Visibility Classes
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+.u-hide { display: none !important; }
+
+.u-show { display: inherit !important; }
+
+.u-visible { visibility: visible !important; }
+
+.u-invisible { visibility: hidden !important; }

@@ -1,0 +1,53 @@
+// ==========================================================================
+// Responsive Container Object
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$container-width--medium:  1140px !default;
+$container-width--large: 1300px !default;
+
+//
+// Override default o-container
+// 1. Force container to have fix width.
+//    Because it's not a responsive web app.
+//
+.o-container {
+  width: $container-width; // 1
+  max-width: none; // 1
+}
+
+.o-container--responsive {
+  width: $container-width;
+
+  @include breakpoint("medium") {
+    width: $container-width--medium;
+  }
+
+  @include breakpoint("large") {
+    width: $container-width--large;
+  }
+}
+
+// Width modifier
+.o-container--full {
+  width: 100%;
+}
+
+.o-container--guide {
+  width: initial;
+  max-width: 1122px;
+}
+
+// Padding modifier
+.o-container--bleed {
+  padding-right: 0;
+  padding-left: 0;
+}

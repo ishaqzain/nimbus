@@ -1,0 +1,53 @@
+// ==========================================================================
+// Hover
+// ==========================================================================
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+.#{$global-utility-namespace} {
+  &hover-pointer {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &hover-pointer--disabled {
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &hover-action-child {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    will-change: transform;
+  }
+
+  &hover-action-parent:hover {
+    // only works up to grandchildren
+    & > .#{$global-utility-namespace}hover-action-child,
+    & > * > .#{$global-utility-namespace}hover-action-child {
+      opacity: 1;
+    }
+  }
+
+  &hover-background-grey {
+    &:hover {
+      background-color: #e6e6e6;
+      transition: background .3s ease-in-out;
+    }
+  }
+
+  &hover-shadow--2 {
+    &:hover {
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08) !important;
+      transition: .3s ease-in-out;
+    }
+  }
+}

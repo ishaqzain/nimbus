@@ -1,0 +1,178 @@
+// ====================
+// semi-responsive grid
+// ====================
+
+// variables
+
+// widths of one grid column
+$width-col-12-s: 69px;
+$width-col-12-m: 82px;
+$width-col-12-l: 88px;
+
+// widths of grid gutter
+$width-gutter-s: 10px;
+$width-gutter-m: 12px;
+$width-gutter-l: 20px;
+
+$color-grid-border: $global-color-ash-light;
+
+// mixins
+
+@mixin grid-col-12-width($x) {
+  width: $width-col-12-s * $x + ($width-gutter-s * ($x - 1));
+
+  @include breakpoint("medium") {
+    width: $width-col-12-m * $x + ($width-gutter-m * ($x - 1));
+  }
+
+  @include breakpoint("large") {
+    width: $width-col-12-l * $x + ($width-gutter-l * ($x - 1));
+  }
+}
+
+@mixin grid-col-12-width-no-gutter($x) {
+  width: $width-col-12-s * $x + ($width-gutter-s * ($x - 1)) + $width-gutter-s;
+
+  @include breakpoint("medium") {
+    width: $width-col-12-m * $x + ($width-gutter-m * ($x - 1)) + $width-gutter-m;
+  }
+
+  @include breakpoint("large") {
+    width: $width-col-12-l * $x + ($width-gutter-l * ($x - 1)) + $width-gutter-l;
+  }
+}
+
+@mixin grid-gutter {
+  margin-left: $width-gutter-s;
+
+  @include breakpoint("medium") {
+    margin-left: $width-gutter-m;
+  }
+
+  @include breakpoint("large") {
+    margin-left: $width-gutter-l;
+  }
+}
+
+@mixin negative-grid-gutter {
+  margin-left: -$width-gutter-s;
+
+  @include breakpoint("medium") {
+    margin-left: -$width-gutter-m;
+  }
+
+  @include breakpoint("large") {
+    margin-left: -$width-gutter-l;
+  }
+}
+
+@mixin grid-no-gutter {
+  margin-left: 0;
+
+  @include breakpoint("medium") {
+    margin-left: 0;
+  }
+
+  @include breakpoint("large") {
+    margin-left: 0;
+  }
+}
+
+@mixin grid-padded-left {
+  padding-left: $width-gutter-s;
+
+  @include breakpoint("medium") {
+    padding-left: $width-gutter-m;
+  }
+
+  @include breakpoint("large") {
+    padding-left: $width-gutter-l;
+  }
+}
+
+@mixin grid-padded-right {
+  padding-right: $width-gutter-s;
+
+  @include breakpoint("medium") {
+    padding-right: $width-gutter-m;
+  }
+
+  @include breakpoint("large") {
+    padding-right: $width-gutter-l;
+  }
+}
+
+.#{$global-object-namespace} {
+  &grid-row {
+    @include clearfix;
+
+    width: 100%;
+    margin: 0;
+  }
+
+  &grid-col {
+    @include grid-gutter;
+
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+
+    @for $i from 1 through 12 {
+      &--12-#{$i} {
+        @include grid-col-12-width($i);
+      }
+    }
+
+    // hack for nested grid
+    > .#{$global-object-namespace}grid-row {
+      @include negative-grid-gutter;
+
+      width: auto;
+    }
+
+    &--no-gutter {
+      @include grid-no-gutter;
+
+      @for $i from 1 through 12 {
+        &.#{$global-object-namespace}grid-col--12-#{$i} {
+          @include grid-col-12-width-no-gutter($i);
+        }
+      }
+    }
+
+    &--centered {
+      float: none;
+      margin: 0 auto;
+    }
+
+    &--cleared {
+      clear: both;
+    }
+
+    // prevent empty grid-col from shrinking
+    &--filler {
+      height: 1px;
+      content: "\0020";
+    }
+
+    &--offset-left {
+      @include grid-padded-left;
+    }
+
+    &--offset-right {
+      @include grid-padded-right;
+    }
+
+    &--pull-right {
+      float: right;
+    }
+
+    &--with-left-border {
+      box-shadow: -1px 0 0 $color-grid-border;
+    }
+
+    &--with-right-border {
+      box-shadow: -1px 0 0 $color-grid-border inset;
+    }
+  }
+}

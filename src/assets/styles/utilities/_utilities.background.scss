@@ -1,0 +1,107 @@
+// ==========================================================================
+// Background Utilities
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+// Variables
+$background-utility-namespace: "bg-" !default;
+$bg-values: center top bottom left right;
+
+// pos--{vertical}-{horizontal}
+.#{$global-utility-namespace}#{$background-utility-namespace} {
+  &pos-- {
+    @each $value in $bg-values {
+      &#{$value} {
+        background-position: $value;
+      }
+    }
+
+    @for $i from 2 through 3 {
+      $c: nth($bg-values, $i);
+
+      &#{$c}-center {
+        background-position: #{$c} center;
+      }
+
+      @for $j from 4 through 5 {
+        $d: nth($bg-values, $j);
+
+        &#{$c}-#{$d} {
+          background-position: $c $d;
+        }
+      }
+    }
+
+    @for $i from 4 through 5 {
+      $c: nth($bg-values, $i);
+
+      &center-#{$c} {
+        background-position: center #{$c};
+      }
+    }
+  }
+
+  &-no-repeat {
+    background-repeat: no-repeat;
+  }
+
+  &size-- {
+    &1of4 {
+      background-size: percentage(1 / 4) !important;
+    }
+
+    &2of4 {
+      background-size: percentage(2 / 4) !important;
+    }
+
+    &3of4 {
+      background-size: percentage(3 / 4) !important;
+    }
+
+    &1 {
+      background-size: 100% !important;
+    }
+
+    &contain {
+      background-size: contain;
+    }
+
+    &cover {
+      background-size: cover;
+    }
+  }
+
+  &-gradient {
+    background-image:
+      linear-gradient(
+        to bottom,
+        $global-color-white,
+        $global-color-sand-light
+      );
+  }
+
+  &-gradient-inverse {
+    background-image:
+      linear-gradient(
+        to top,
+        $global-color-white,
+        $global-color-sand-light
+      );
+  }
+
+  &-transparent {
+    background: transparent !important;
+  }
+
+  &-color-transparent {
+    background-color: transparent !important;
+  }
+}

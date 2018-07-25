@@ -1,0 +1,109 @@
+// ==========================================================================
+// Animation
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+.#{$global-utility-namespace} {
+  &loading-gradient {
+    animation: a-background-move 1.5s infinite;
+    background-image: linear-gradient(to right, $global-color-sand-light, $global-color-sand-dark, $global-color-sand-light);
+    background-size: 200%;
+  }
+
+  &loading-gradient--white {
+    background-image: linear-gradient(to right, $global-color-white, $global-color-sand-dark, $global-color-white);
+  }
+
+  &ease {
+    transition-timing-function: ease;
+    transition-duration: .7s;
+
+    &--left {
+      transition-property: left;
+    }
+
+    &--right {
+      transition-property: right;
+    }
+  }
+
+  &shimmer-masker {
+    background: $global-color-white;
+    position: absolute;
+    box-sizing: border-box;
+
+    &--sand {
+      background: $global-color-sand;
+    }
+  }
+
+  &animated {
+    &-fading {
+      animation: animateFading 3s infinite;
+    }
+
+    &-spinner {
+      background-image: url(data:image/gif;bogus:ABCDEF;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==);
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+
+    &-shimmer {
+      animation: placeholderShimmer 1s linear infinite;
+      animation-fill-mode: forwards;
+      background: linear-gradient(to right, $global-color-sand-dark 8%, $global-color-sand-super-dark 18%, $global-color-sand-dark 33%);
+      background-size: 2800px 104px;
+      position: relative;
+
+      &--rounded {
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+@keyframes animateFading {
+  0% {
+    opacity: .1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .1;
+  }
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -1468px 0;
+  }
+
+  100% {
+    background-position: 1468px 0;
+  }
+}
+
+@keyframes a-background-move {
+  0% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: -100%;
+  }
+}

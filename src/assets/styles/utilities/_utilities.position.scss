@@ -1,0 +1,90 @@
+// ==========================================================================
+// Widths
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+.#{$global-utility-namespace}position {
+  &-relative { // u-position-relative
+    position: relative !important;
+  }
+
+  &-absolute { // u-position-absolute
+    position: absolute !important;
+  }
+
+  &-fixed { // u-position-fixed
+    position: fixed !important;
+  }
+
+  &-bottom {
+    bottom: 0;
+  }
+
+  &-top {
+    top: 0;
+  }
+
+  &-left {
+    left: 0;
+  }
+
+  &-right {
+    right: 0;
+  }
+
+  // the -100% y-translate is currently required in Premium landing page
+  // todo: split this utility to more reusable classes
+  &-center--h {
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+
+  &-center--v {
+    top: 50%;
+    transform: translate(-50%, -100%);
+  }
+
+  &-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-center--left {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  &-center--top {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &--top-left {
+    top: 0;
+    left: 0;
+  }
+
+  &--top-right {
+    top: 0;
+    right: 0;
+  }
+
+  &--bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+
+  &--bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+}

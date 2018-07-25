@@ -1,0 +1,51 @@
+// ==========================================================================
+// Float
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$enable-float-responsive: false !default;
+
+//
+// Float Breakpoints query
+//
+$float-breakpoints-query: "small", "medium", "large", "xlarge" !default;
+
+.u-float-left { float: left !important; }
+
+.u-float-right { float: right !important; }
+
+.u-float-none { float: none !important; }
+
+//
+// It will generate responsive float classes for each of our
+// defined breakpoints, and give them a Responsive Suffix, e.g.:
+//
+// <div class="u-float-[left|right|none]-[small|medium|large]">
+//
+@if ($enable-float-responsive == true) {
+  @each $bp-name in $float-breakpoints-query {
+    @include breakpoint($bp-name) {
+      .u-float-left-#{$bp-name} {
+        float: left !important;
+      }
+
+      .u-float-right-#{$bp-name} {
+        float: right !important;
+      }
+
+      .u-float-none-#{$bp-name} {
+        float: none !important;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,91 @@
+// ==========================================================================
+// Responsive Layout Object
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings:  false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$enable-layout--micro:      false !default;
+$enable-layout--tiny:       false !default;
+$enable-layout--responsive: false !default;
+$enable-layout--columns:    false !default;
+
+// Gutter size modifiers.
+// ==========================================================================
+
+@if ($enable-layout--micro == true) {
+  .o-layout--micro {
+    margin-left: -#{rem-calc($global-spacing-unit--micro)};
+
+    > .o-layout__item {
+      padding-left: rem-calc($global-spacing-unit--micro);
+    }
+  }
+}
+
+@if ($enable-layout--tiny == true) {
+  .o-layout--tiny {
+    margin-left: -#{rem-calc($global-spacing-unit--tiny)};
+
+    > .o-layout__item {
+      padding-left: rem-calc($global-spacing-unit--tiny);
+    }
+  }
+}
+
+@if ($enable-layout--responsive == true) {
+  .o-layout--responsive {
+    margin-left: -#{rem-calc($global-spacing-unit--tiny)};
+
+    @include breakpoint("large") {
+      margin-left: -#{rem-calc($global-spacing-unit)};
+    }
+
+    > .o-layout__item {
+      padding-left: rem-calc($global-spacing-unit--tiny);
+
+      @include breakpoint("large") {
+        padding-left: rem-calc($global-spacing-unit);
+      }
+    }
+  }
+}
+
+@if ($enable-layout--columns == true) {
+  .o-layout--columns {
+    > .o-layout__item:first-child {
+      box-shadow: -1px 0 0 $global-color-ash-light inset;
+    }
+
+    > .o-layout__item:nth-of-type(odd) {
+      box-shadow: -1px 0 0 $global-color-ash-light inset;
+    }
+
+    > .o-layout__item:nth-of-type(even) {
+      box-shadow:
+        -1px 0 0 $global-color-ash-light,
+        -1px 0 0 $global-color-ash-light inset;
+    }
+
+    > .o-layout__item:last-child {
+      box-shadow: -1px 0 0 $global-color-ash-light;
+    }
+  }
+}
+
+.o-layout__item--centered {
+  float: none !important;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.o-layout__item--empty {
+  min-height: 1px;
+  content: "\0020";
+}

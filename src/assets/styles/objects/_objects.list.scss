@@ -1,0 +1,92 @@
+// ==========================================================================
+// List
+// ==========================================================================
+//
+// The list object simply removes any indents and bullet points from lists.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+// Variable(s)
+$enable-list-inline--delimited:      false !default;
+$use-markup-list-fixed:              false !default;
+$list-inline-delimit-character:      ",\00A0" !default;
+$list-inline-partition-character:    "|" !default;
+
+.o-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    display: block;
+    padding: 0;
+
+    .o-list--micro & {
+      @include m-margin(1, "top");
+
+      &:first-child {
+        @include m-margin(0, "top");
+      }
+    }
+  }
+}
+
+//
+// List Inline
+// ==========================================================================
+// The list-inline object simply displays a list of items in one line.
+
+.o-list-inline > .o-list__item {
+  display: inline-block;
+}
+
+//
+// List Inline Delimited
+// ==========================================================================
+// Comma delimited list to semantically mark up lists of tags, etc.
+
+@if ($use-markup-list-fixed == false) {
+  .o-list-inline-delimited {
+    font-size: 0;
+  }
+}
+
+.o-list-inline-delimited > .o-list__item {
+  display: inline;
+
+  @if ($use-markup-list-fixed == false) {
+    @include font-size($global-font-size, none);
+  }
+
+  &:before {
+    content: "#{$list-inline-delimit-character}";
+  }
+
+  &:first-child:before {
+    content: "";
+  }
+}
+
+.o-list-inline-delimited--partition > .o-list__item {
+  &:first-child:before {
+    margin: 0;
+  }
+
+  &:first-child:after {
+    @include m-margin(.5, right);
+  }
+
+  &:before {
+    @include m-margin(0 .5);
+
+    content: "#{$list-inline-partition-character}";
+  }
+}

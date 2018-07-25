@@ -1,0 +1,41 @@
+// ==========================================================================
+// Scroll
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings:  false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$name:      ".#{$global-utility-namespace}scroll";
+
+#{$name} {
+  &--stylish-webkit {
+    @include stylish-scrollbar-webkit;
+  }
+
+  &-gradient-bottom {
+    padding-bottom: 12px;
+
+    &::after {
+      content: " ";
+      height: 30px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          to top,
+          rgba($global-color-white, .8) 0%,
+          rgba($global-color-white, .4) 60%,
+          rgba($global-color-white, 0) 100%
+        );
+    }
+  }
+}

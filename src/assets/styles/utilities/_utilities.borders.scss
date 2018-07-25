@@ -1,0 +1,148 @@
+// ====================
+// borders utilities
+// ====================
+
+// use these utility classes to add solid border to your element
+// usage:
+//
+// u-border[direction || nil]--[width: 0-5]--[color]
+
+// example:
+//
+// %header.u-border-bottom--1--ash-light
+// %section.u-border--4--red-brand
+// %section.u-border--sand-dark
+// etc
+
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$medium-border-radius: 13px;
+
+.#{$global-utility-namespace} {
+  &border--1--transparent {
+    @include m-border(1, null, transparent);
+  }
+
+  @for $width from 0 through 5 {
+    @if ($width == 0) {
+      &border--0 {
+        @include m-border(0);
+      }
+
+      &border-top--0 {
+        @include m-border(0, "top");
+      }
+
+      &border-right--0 {
+        @include m-border(0, "right");
+      }
+
+      &border-bottom--0 {
+        @include m-border(0, "bottom");
+      }
+
+      &border-left--0 {
+        @include m-border(0, "left");
+      }
+    }
+
+    @else {
+      @each $name, $color in $global-utilities-colors {
+        &border--#{$width}--#{$name} {
+          @include m-border($width, null, $color);
+        }
+
+        &border-hover--#{$width}--#{$name} {
+          &:hover {
+            @include m-border($width, null, $color);
+          }
+        }
+
+        &border-top--#{$width}--#{$name} {
+          @include m-border($width, "top", $color);
+        }
+
+        &border-right--#{$width}--#{$name} {
+          @include m-border($width, "right", $color);
+        }
+
+        &border-bottom--#{$width}--#{$name} {
+          @include m-border($width, "bottom", $color);
+        }
+
+        &border-left--#{$width}--#{$name} {
+          @include m-border($width, "left", $color);
+        }
+      }
+
+      @each $name, $color in $global-utilities-colors {
+        &border-dashed--#{$width}--#{$name} {
+          @include m-border($width, null, $color, "dashed");
+        }
+
+        &border-top-dashed--#{$width}--#{$name} {
+          @include m-border($width, "top", $color, "dashed");
+        }
+
+        &border-right-dashed--#{$width}--#{$name} {
+          @include m-border($width, "right", $color, "dashed");
+        }
+
+        &border-bottom-dashed--#{$width}--#{$name} {
+          @include m-border($width, "bottom", $color, "dashed");
+        }
+
+        &border-left-dashed--#{$width}--#{$name} {
+          @include m-border($width, "left", $color, "dashed");
+        }
+      }
+
+      @each $name, $color in $global-external-colors {
+        &border-external--#{$width}--#{$name} {
+          @include m-border($width, null, $color);
+        }
+      }
+    }
+  }
+
+  //scss-lint:disable ImportantRule
+  @each $name, $color in $global-utilities-colors {
+    &border--#{$name} {
+      border-color: $color !important;
+    }
+  }
+
+  @for $idx from 0 through 4 {
+    &border-radius--#{$idx} {
+      border-radius: #{$global-border-radius * $idx} !important;
+    }
+  }
+
+  &border-radius--13 {
+    border-radius: $medium-border-radius !important;
+  }
+
+  &border-top-radius--13 {
+    border-radius: $medium-border-radius $medium-border-radius 0 0 !important;
+  }
+
+  &border-radius--50 {
+    border-radius: #{$global-border-radius * 50} !important;
+  }
+
+  &border--rounded {
+    border-radius: 50%;
+  }
+
+  &border-collapse {
+    border-collapse: collapse;
+  }
+
+  &border-dotted {
+    border-style: dotted !important;
+  }
+}

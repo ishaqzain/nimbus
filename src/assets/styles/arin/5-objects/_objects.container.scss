@@ -1,0 +1,44 @@
+// ==========================================================================
+// Container
+// ==========================================================================
+//
+// Page-level constraining and wrapping elements.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$container-width:        1000px !default;
+$container-gutter:       $global-spacing-unit / 2 !default;
+
+$enable-container--full: false !default;
+
+@if (type-of($container-width) != number) {
+  @error "`#{$container-width}` needs to be a number."
+}
+
+.o-container {
+  @include clearfix();
+
+  padding-right: rem-calc($container-gutter);
+  padding-left: rem-calc($container-gutter);
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: $container-width;
+}
+
+
+@if ($enable-container--full == true) {
+  .o-container--full {
+    max-width: none;
+  }
+}

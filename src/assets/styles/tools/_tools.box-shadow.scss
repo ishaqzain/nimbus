@@ -1,0 +1,12 @@
+// ==========================================================================
+// Box Shadow
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+@import "../settings/settings.colors";
+
+@mixin box-shadow() {
+  box-shadow: 0 1px 2px transparentize($global-color-black-solid, .75), 0 0 1px transparentize($global-color-black-solid, .75);
+}

@@ -1,0 +1,30 @@
+// ==========================================================================
+// HR
+// ==========================================================================
+// It can be use with other element to mock `hr` style as divider
+//
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+// 1. Add the correct box sizing in Firefox.
+// 2. Show the overflow in Edge and IE.
+
+$hr-margin:        $global-desktop-spacing-unit * 4;
+$hr-margin--tight: $global-desktop-spacing-unit * 3;
+
+hr {
+  display: block;
+  box-sizing: content-box; // 1
+  height: 0; // 1
+  margin: rem-calc($hr-margin) 0;
+  border: 0;
+  border-top: 1px solid $global-color-sand-super-dark;
+  overflow: visible; // 2
+  clear: both;
+}
