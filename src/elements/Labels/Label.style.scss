@@ -14,9 +14,9 @@
   border-color: #ddd;
   background-color: #fafafa;
   line-height: 14px;
-  display: inline-block;
-  vertical-align: middle;
-  height: 18px;
+  // display: inline-block;
+  // vertical-align: middle;
+  // height: 18px;
   margin: 0;
   padding: 1px 6px;
   overflow: visible;
@@ -61,4 +61,11 @@
 .c-label--pink {
   border-color: #ff566a;
   background-color: #ff566a;
+}
+
+.c-label {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  white-space: nowrap;
 }

@@ -76,9 +76,26 @@ export default {
   <div>
     <heading level="h4">Size Variations</heading>
     <br>
-    <avatar-style size="small" avatarUrl="#" imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" imageAlt="Ini Avatar" ></avatar-style>
-    <avatar-style avatarUrl="#" imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" imageAlt="Ini Avatar" ></avatar-style>
-    <avatar-style size="large" avatarUrl="#" imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" imageAlt="Ini Avatar" ></avatar-style>
+    <avatar-style 
+      size="small" 
+      avatarUrl="#" 
+      imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" 
+      imageAlt="Ini Avatar"
+      >
+    </avatar-style>
+    <avatar-style 
+      avatarUrl="#" 
+      imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" 
+      imageAlt="Ini Avatar" 
+      >
+    </avatar-style>
+    <avatar-style
+      size="large" 
+      avatarUrl="#" 
+      imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" 
+      imageAlt="Ini Avatar" 
+      >
+    </avatar-style>
   </div>
   ```
 </docs>
