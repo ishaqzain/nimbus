@@ -8,7 +8,8 @@
       v-if="prop.type === 'color'">
         <div class="swatch" :style="{ backgroundColor: prop.value }" />
         <h3>{{prop.name.replace(/_/g, " ").replace(/color/g, "")}}</h3>
-        <span>RGB: {{prop.value}}</span>
+        <span>RGB: {{prop.value}} </span>
+        <span>HEX: {{prop.originalValue}} </span>
         <span>SCSS: ${{prop.name.replace(/_/g, "-")}}</span>
     </div>
   </div>

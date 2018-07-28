@@ -1,12 +1,13 @@
 <template>
   <component :is="type" class="index">
-    <nav-bar active="Index" :navItems="[
+    <!-- <nav-bar active="Index" :navItems="[
       {name: 'Template', component: 'Index', href: '/#/'},
       {name: 'Documentation', href: 'http://localhost:6060/'}
-    ]"/>
+    ]"/> -->
     <wrapper>
-      <heading level="h1">Nimbus</heading>
-      <text-style><a href="https://vueds.com">Vue Design System</a> is an open-source tool for building design systems with Vue.js. It provides you and your team a set of organized tools, patterns &amp; practices. It works as the foundation for your application development.</text-style>
+      <heading level="h1">nimbus.</heading>
+      <text-style> Nimbus is Bukalapak Design System with Vue.js (vueds.com). It provides you and your team a set of organized tools, patterns &amp; practices. It works as the foundation for your application development.</text-style>
+      <a href="http://localhost:6060/">Documentation</a>
     </wrapper>
   </component>
 </template>
@@ -49,8 +50,9 @@ $color-template-link: $color-bleu-de-france;
   @include reset;
   @include inset-space($space-base);
   min-height: $space-xx-large * 4;
-  background: $color-template-background;
-  background: linear-gradient(0deg, $color-template-background-bottom, $color-template-background-top 100%);
+  // background: $color-template-background;
+  // background: linear-gradient(0deg, $color-template-background-bottom, $color-template-background-top 100%);
+  background: $color-sand;
   text-align: center;
   position: relative;
   float: left;
@@ -60,13 +62,16 @@ $color-template-link: $color-bleu-de-france;
     // This is how you’d use design tokens with media queries
   }
   .heading {
-    color: $color-template-text;
+    // color: $color-template-text;
+    color: $color-brand;
   }
   .text-style {
-    color: $color-template-text;
+    // color: $color-template-text;
+    color: $color-charcoal;
   }
   .text-link {
-    color: $color-template-link;
+    // color: $color-template-link;
+    color: $color-brand-light;
   }
   .wrapper {
     max-width: $space-xx-large * 4.5;
@@ -77,7 +82,8 @@ $color-template-link: $color-bleu-de-france;
   }
   a {
     font-family: $font-family-text;
-    color: $color-bleu-de-france;
+    // color: $color-bleu-de-france;
+    color: $color-brand-light;
     text-decoration: underline;
   }
 }

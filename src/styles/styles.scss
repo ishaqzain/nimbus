@@ -9,3 +9,10 @@
 @import "../styles/functions";
 @import "../styles/mixins";
 @import "../styles/spacing";
+
+// hide color documentation
+.color {
+  &.color_hide {
+    display: none;
+  }
+}

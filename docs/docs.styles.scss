@@ -75,7 +75,8 @@ div[class^="rsg--wrapper"] > h2[class^="rsg--heading"] {
   padding: $space-x-large $space-x-large;
   width: calc(100% + #{$space-x-large * 2});
   margin: -#{$space-small} -#{$space-x-large} $space-large -#{$space-x-large};
-  background: $color-cloud;
+  // background: $color-cloud;
+  background: $color-sand;
   font-size: $font-size-xx-large;
   a:hover {
     text-decoration: none;
@@ -97,7 +98,8 @@ header[class^="rsg--header"] {
 }
 div[class^="rsg--wrapper"] > h1[class^="rsg--heading"] a {
   font-weight: $font-weight-regular;
-  color: $color-oxford-blue;
+  // color: $color-oxford-blue;
+  color: $color-brand;
   letter-spacing: -1px;
   &:hover {
     text-decoration: none;
@@ -122,7 +124,8 @@ h2[class^="rsg--heading"] {
     font-size: $font-size-x-large / 1.6;
   }
   a {
-    color: $docs-color-heading;
+    // color: $docs-color-heading;
+    color: $color-brand;
   }
 }
 
@@ -204,19 +207,23 @@ p[class^="rsg--para"] code {
 --------------------------------------------- */
 
 div[class^="rsg--sidebar"] {
-  background: mix($color-bleu-de-france, $color-rich-black, 5%);
-  border: 0;
+  // background: mix($color-bleu-de-france, $color-rich-black, 5%);
+  background: $color-white;
+  // border: 0;
   @media (max-width: #{$docs-breakpoint}) {
     padding-bottom: $space-large;
   }
   a[class^="rsg--link"] {
     font-weight: $font-weight-semi-bold;
-    color: $color-bleu-de-france;
+    // color: $color-bleu-de-france;
+    color: $color-black;
     &:hover {
-      color: $color-bleu-de-france-lighter;
+      // color: $color-bleu-de-france-lighter;
+      color: $color-brand-light;
     }
     &:active {
-      color: $color-bleu-de-france-dark;
+      // color: $color-bleu-de-france-dark;
+      color: $color-brand-dark;
     }
   }
   ul ul[class^="rsg--list"] {
@@ -231,7 +238,8 @@ div[class^="rsg--sidebar"] {
     }
     & > a,
     & > a:hover {
-      color: tint($color-bleu-de-france, 80%);
+      // color: tint($color-bleu-de-france, 80%);
+      color: $color-brand;
     }
   }
   ul[class^="rsg--list"] {
@@ -281,22 +289,26 @@ div[class^="rsg--sidebar"] {
 // Sidebar logo
 div[class^="rsg--logo"] {
   @include inset-space($space-base);
-  border-bottom: 1px solid rgba($color-white, 0.1);
+  border-bottom: 1px solid rgba($color-black, 0.1);
   h1 {
-    color: $color-white;
-    color: tint($color-bleu-de-france, 90%);
+    // color: $color-white;
+    // color: tint($color-bleu-de-france, 90%);
+    color: $color-brand;
     font-weight: $font-weight-regular;
+    font-size: 18px;
   }
 }
 
 // Sidebar search
 div[class^="rsg--search"] input {
   @include inset-squish-space($space-small);
-  color: $color-white;
-  border: 1px solid transparent;
-  background: mix($color-bleu-de-france, $color-rich-black, 20%);
+  color: $color-black;
+  // border: 1px solid transparent;
+  // background: mix($color-bleu-de-france, $color-rich-black, 20%);
+  background: $color-sand-dark;
   &:focus {
-    border: 1px solid $color-bleu-de-france;
+    // border: 1px solid $color-bleu-de-france;
+    border: 1px solid $color-ash;
     &::-webkit-textfield-decoration-container {
       display: none !important;
     }
@@ -305,13 +317,16 @@ div[class^="rsg--search"] input {
     }
   }
   &::-webkit-input-placeholder {
-    color: rgba(mix($color-white, $color-bleu-de-france, 50%), 0.35);
+    // color: rgba(mix($color-white, $color-bleu-de-france, 50%), 0.35);
+    color: $color-ash;
   }
   &:-ms-input-placeholder {
-    color: rgba(mix($color-white, $color-bleu-de-france, 50%), 0.35);
+    // color: rgba(mix($color-white, $color-bleu-de-france, 50%), 0.35);
+    color: $color-ash;
   }
   &::-moz-placeholder {
-    color: rgba(mix($color-white, $color-bleu-de-france, 50%), 0.35);
+    // color: rgba(mix($color-white, $color-bleu-de-france, 50%), 0.35);
+    color: $color-ash;
     opacity: 1;
   }
 }
