@@ -35,7 +35,7 @@ export default {
      * `0-100`
      */
     percentage: {
-      type: String,
+      type: Number,
       default: 0,
     },
   },
@@ -50,17 +50,18 @@ export default {
 }
 </script>
 
-<style src="./ProgressBar.style.scss" lang="sass" scoped></style>
+<style src="./ProgressBar.style.scss" lang="scss" scoped>
+</style>
 
 <docs>
   ```jsx
     <div>
       <heading level="h4">Color Variations</heading>
       <br>
-      <progress-bar percentage="50"></progress-bar><br>
-      <progress-bar percentage="50" color="green"></progress-bar><br>
-      <progress-bar percentage="50" color="yellow"></progress-bar><br>
-      <progress-bar percentage="50" color="blue"></progress-bar>
+      <progress-bar :percentage="50"></progress-bar><br>
+      <progress-bar :percentage="50" color="green"></progress-bar><br>
+      <progress-bar :percentage="50" color="yellow"></progress-bar><br>
+      <progress-bar :percentage="50" color="blue"></progress-bar>
     </div>
   ```
 </docs>

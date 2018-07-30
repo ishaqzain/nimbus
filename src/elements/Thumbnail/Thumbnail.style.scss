@@ -1,0 +1,17 @@
+.c-thumbnail {
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border: 1px solid #eee;
+  border-radius: $border-radius-default;
+  &--tiny {
+    max-width: 50px;
+  }
+  &--small {
+    max-width: 60px;
+  }
+  &--huge {
+    max-width: 300px;
+  }
+}
