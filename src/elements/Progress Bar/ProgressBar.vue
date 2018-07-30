@@ -3,7 +3,7 @@
     class="c-progress c-progress-green"
     :class="getClasses">
     <div
-      class="c-progress__bar "
+      class="c-progress__bar"
       :style="{width: `${score}%`, transition: '1s widht ease'}">
     </div>
   </div>

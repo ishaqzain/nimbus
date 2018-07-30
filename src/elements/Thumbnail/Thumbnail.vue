@@ -66,10 +66,10 @@ export default {
   <div>
     <heading level="h4">Size Variations</heading>
     <br>
-    <thumbnail size="tiny" imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb"></thumbnail>
-    <thumbnail size="small" imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb"></thumbnail>
-    <thumbnail imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb"></thumbnail>
-    <thumbnail size="huge" imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb"></thumbnail>
+    <thumbnail size="tiny" imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb" imageAlt="ini thumbnail"></thumbnail>
+    <thumbnail size="small" imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb" imageAlt="ini thumbnail"></thumbnail>
+    <thumbnail imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb" imageAlt="ini thumbnail"></thumbnail>
+    <thumbnail size="huge" imageUrl="https://placehold.it/300/fafafa/333333?text=Thumb" imageAlt="ini thumbnail"></thumbnail>
   </div>
   ```
 </docs>

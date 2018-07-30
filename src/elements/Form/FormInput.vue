@@ -149,7 +149,7 @@ $color-placeholder: tint($color-silver, 50%);
     @include inset-squish-space($space-small);
     transition: all 0.2s ease;
     -webkit-appearance: none;
-    appearance: none;
+    // appearance: none;
     font-family: $font-family-text;
     background: $color-white;
     border-radius: $border-radius-default;

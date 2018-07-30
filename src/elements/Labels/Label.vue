@@ -12,7 +12,7 @@
  */
 export default {
   name: "LabelStyle",
-  status: "prototype",
+  status: "review", //review, prototype, ready, deprecated
   release: "1.0.0",
   props: {
     /**

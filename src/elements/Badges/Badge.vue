@@ -2,7 +2,7 @@
   <component
     class="c-badge"
     :is="type"
-    :class="badgeClasses">
+    :class="getClasses">
     <div class="c-badge__content">
       <slot/>
     </div>
@@ -17,7 +17,7 @@
  */
 export default {
   name: "BadgeStyle",
-  status: "prototype",
+  status: "review",
   release: "1.0.0",
   props: {
     /**
@@ -45,7 +45,7 @@ export default {
     },
   },
   computed: {
-    badgeClasses() {
+    getClasses() {
       return [this.color ? `c-badge--${this.color}` : "", this.size ? `c-badge--${this.size}` : ""]
     },
   },
