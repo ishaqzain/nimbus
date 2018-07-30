@@ -214,7 +214,8 @@ div[class^="rsg--sidebar"] {
     padding-bottom: $space-large;
   }
   a[class^="rsg--link"] {
-    font-weight: $font-weight-semi-bold;
+    // font-weight: $font-weight-semi-bold;
+    font-weight: $font-weight-regular;
     // color: $color-bleu-de-france;
     color: $color-black;
     &:hover {
@@ -334,7 +335,8 @@ div[class^="rsg--search"] input {
 // Sidebar 1st level section links
 ul[class^="rsg--list"] a[class*=" rsg--heading"],
 div[class^="rsg--root"] > ul[class^="rsg--list"] > li > a {
-  font-weight: $font-weight-semi-bold;
+  // font-weight: $font-weight-semi-bold;
+  font-weight: $font-weight-regular;
 }
 
 /* CODE PREVIEWS

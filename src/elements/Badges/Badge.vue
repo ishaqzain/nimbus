@@ -1,5 +1,8 @@
 <template>
-  <component class="c-badge" :is="type" :class="badgeClasses">
+  <component
+    class="c-badge"
+    :is="type"
+    :class="badgeClasses">
     <div class="c-badge__content">
       <slot/>
     </div>

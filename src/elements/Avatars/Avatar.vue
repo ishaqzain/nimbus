@@ -1,6 +1,13 @@
 <template>
-  <component :is="type" class="c-avatar" :class="avatarClasses" :href="avatarUrl">
-    <img :alt="imageAlt" class="c-avatar__image" :src="imageUrl">
+  <component 
+    :is="type" 
+    class="c-avatar" 
+    :class="getClasses" 
+    :href="avatarUrl">
+    <img 
+      :alt="imageAlt" 
+      class="c-avatar__image"
+      :src="imageUrl">
   </component>
 </template>
 
@@ -12,7 +19,7 @@
  */
 export default {
   name: "AvatarStyle",
-  status: "prototype",
+  status: "review",
   release: "1.0.0",
   props: {
     /**
@@ -43,25 +50,25 @@ export default {
      */
     avatarUrl: {
       type: String,
-      default: "",
+      default: null,
     },
     /**
      * The src attribute specifies the URL (web address) of the image
      */
     imageUrl: {
       type: String,
-      default: "",
+      default: null,
     },
     /**
      * The value of the alt attribute should describe the image
      */
     imageAlt: {
       type: String,
-      default: "",
+      default: null,
     },
   },
   computed: {
-    avatarClasses() {
+    getClasses() {
       return [this.size ? `c-avatar--${this.size}` : ""]
     },
   },
@@ -80,21 +87,18 @@ export default {
       size="small" 
       avatarUrl="#" 
       imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" 
-      imageAlt="Ini Avatar"
-      >
+      imageAlt="Ini Avatar">
     </avatar-style>
     <avatar-style 
       avatarUrl="#" 
       imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" 
-      imageAlt="Ini Avatar" 
-      >
+      imageAlt="Ini Avatar">
     </avatar-style>
     <avatar-style
       size="large" 
       avatarUrl="#" 
       imageUrl="https://placehold.it/300/fafafa/333333?text=Avatar" 
-      imageAlt="Ini Avatar" 
-      >
+      imageAlt="Ini Avatar">
     </avatar-style>
   </div>
   ```

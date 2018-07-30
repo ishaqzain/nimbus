@@ -21,7 +21,7 @@
  */
 export default {
   name: "ButtonStyle",
-  status: "prototype",
+  status: "review",
   release: "1.0.0",
   props: {
     /**

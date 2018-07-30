@@ -7,7 +7,7 @@
     <wrapper>
       <heading level="h1">nimbus.</heading>
       <text-style> Nimbus is Bukalapak Design System with Vue.js (vueds.com). It provides you and your team a set of organized tools, patterns &amp; practices. It works as the foundation for your application development.</text-style>
-      <a href="http://localhost:6060/">Documentation</a>
+      <a href="http://localhost:6060/">Getting Started</a>
     </wrapper>
   </component>
 </template>
