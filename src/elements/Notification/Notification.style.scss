@@ -1,0 +1,57 @@
+.c-notification {
+  border-radius: 0;
+  color: #ddd;
+  display: flex;
+  font-size: 14px;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  line-height: 1.4;
+  background-color: #fff7e2;
+  position: relative;
+  padding: 12px 18px;
+  color: #8b6f32;
+  border: 1px solid #e6b138;
+  border-radius: $border-radius-default;
+  // transition: opacity 3s; custom transisition
+  &--success {
+    color: $color-green-super-dark;
+    background-color: $color-green-super-light;
+    border-color: $color-green;
+    &.is-solid {
+      background-color: $color-green;
+      border-color: $color-green;
+      color: $color-white;
+    }
+  }
+  &--error {
+    color: $color-pink-coral;
+    background-color: $color-pink-light;
+    border-color: $color-pink-coral;
+    &.is-solid {
+      background-color: $color-pink-coral;
+      border-color: $color-pink-coral;
+      color: $color-white;
+    }
+  }
+  .c-icon {
+    align-self: center;
+  }
+  div {
+    display: flex;
+  }
+  div:first-child .c-icon {
+    margin-right: 12px;
+  }
+}
+
+// overide styles components
+.c-icon {
+  align-self: center;
+}
+.c-icon--close {
+  cursor: pointer;
+  color: rgba(51, 51, 51, 0.4);
+}
+.c-text {
+  align-self: center;
+  flex: 1 1;
+}

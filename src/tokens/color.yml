@@ -37,13 +37,13 @@ props:
   color_pink_coral:
     value: "ff566a"
     category: color_group_2
-  color_pink_coral_light:
+  color_pink_light:
     value: "#ffe6e9"
     category: color_group_2
   color_green_super_dark:
     value: "#5eab34"
     category: color_group_3
-  color_green_super:
+  color_green_dark:
     value: "#74b94e"
     category: color_group_3
   color_green:
