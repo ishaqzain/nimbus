@@ -6,7 +6,7 @@
 // Pictograph Settings, for icon
 // ==========================================================================
 $global-component-namespace: "c-";
-$pictograph-asset-path-prefix: "~pictograph";
+$pictograph-asset-path-prefix: "../../assets/styles/pictograph";
 $imported-global-settings: true;
 
-@import "~pictograph/pictograph";
+@import "../../assets/styles/pictograph/pictograph";
