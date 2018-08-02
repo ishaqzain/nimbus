@@ -1,0 +1,232 @@
+// ==========================================================================
+// MWEB Sprite Icons
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+$enable-icon-duotone--medium: true !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+$pictograph-asset-path-prefix: "" !default;
+
+// variables
+$sprite-file-path: "pictograph_mweb/images/icon-dualtone-sprite.png";
+$sprite-file-width: 48px;
+$sprite-file-height: 7728px; // 7680px;
+
+$sprite-icon-sizes: (
+  "small": 16px,
+  "medium": 24px,
+  "large": 32px
+);
+
+$sprite-icons: (
+  "help",
+  "report",
+  "seller_setting",
+  "seller_setting_alt",
+  "subscribe",
+  "motor",
+  "ticket",
+  "version",
+  "information",
+  "badge",
+  "acc_summary",
+  "lapak_setting",
+  "follow",
+  "beauty",
+  "office",
+  "save_address",
+  "community",
+  "badge_alt",
+  "feedback",
+  "phone",
+  "store",
+  "medical",
+  "industrial",
+  "address",
+  "blog",
+  "trusted_seller",
+  "subscription",
+  "search",
+  "voucher_game",
+  "fashion_men",
+  "food",
+  "verification",
+  "about",
+  "top_seller",
+  "notification",
+  "cart",
+  "promo",
+  "fashion_women",
+  "home_living",
+  "envelope",
+  "folder",
+  "seller",
+  "chat",
+  "transaction",
+  "electricity",
+  "phone_alt",
+  "baby",
+  "email_verified",
+  "wallet",
+  "product",
+  "seller_page",
+  "profile",
+  "topup_wallet",
+  "computer",
+  "fashion_kid",
+  "phone_verified",
+  "redeem",
+  "push",
+  "store_product",
+  "seller_page_alt",
+  "phone_data",
+  "electronic",
+  "bicycle",
+  "save_phone",
+  "boy",
+  "bukaiklan",
+  "seller_setting_alt_2",
+  "harbolnas",
+  "phone_balance",
+  "camera",
+  "sport",
+  "download",
+  "girl",
+  "promoted_push",
+  "product_stacked",
+  "filter",
+  "sort",
+  "car",
+  "games",
+  "burger",
+  "login",
+  "subscribe_alt",
+  "store_alt",
+  "cogs",
+  "others",
+  "logout",
+  "bukareksa",
+  "agent",
+  "agent-register",
+  "e_voucher",
+  "list",
+  "baggage",
+  "calendar",
+  "food-alt",
+  "hourglass",
+  "plane",
+  "sort-alt",
+  "sort-alt-desc",
+  "sort-alt-asc",
+  "switch",
+  "tax",
+  "trip-one",
+  "trip-return",
+  "train",
+  "train-org",
+  "train-des",
+  "home",
+  "official-acc",
+  "notification",
+  "referral",
+  "invited-friend",
+  "finished-shopping",
+  "rewards-received",
+  "expired",
+  "friendship",
+  "verified-account",
+  "bl-credit",
+  "dompet-lapak",
+  "paid",
+  "alert",
+  "product-remitted",
+  "product-received",
+  "product-processed",
+  "product-delivered",
+  "confirm-payment",
+  "bl-assurance",
+  "voucher-code",
+  "bukadompet-pin",
+  "login-alert",
+  "password",
+  "authentication",
+  "pdam",
+  "bpjs-kesehatan",
+  "tagihan-listrik",
+  "token-listrik",
+  "call-center",
+  "flash-deal",
+  "bahan-masak",
+  "cuci",
+  "kopi",
+  "makanan-ringan",
+  "mie-instant",
+  "minuman",
+  "rokok",
+  "mandi",
+  "bundling",
+  "product-history",
+  "notification-alt",
+  "bukapengadaan",
+  "product-refunded",
+  "news",
+  "katalog",
+  "tagihan-pulsa",
+  "career-togetherness",
+  "career-speed",
+  "career-persistence",
+  "career-novelty",
+  "career-datadriven",
+  "career-customerservice",
+  "bukamall",
+  "bus",
+);
+
+//
+// Base component
+// ==========================================================================
+
+.#{$global-component-namespace}sprite-icon,
+.#{$global-component-namespace}dualtone-icon {
+  background: url("#{$pictograph-asset-path-prefix}/vendor/#{$sprite-file-path}") no-repeat;
+  background: url(asset-path($sprite-file-path)) no-repeat;
+  background-position-x: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// Size Variants
+// ==========================================================================
+@each $name, $size in $sprite-icon-sizes {
+  $width: $size;
+  $height: $size;
+  $ratio: $width / $sprite-file-width;
+
+  .#{$global-component-namespace}sprite-icon--#{$name},
+  .#{$global-component-namespace}dualtone-icon--#{$name} {
+    background-size: $width $ratio * $sprite-file-height;
+    width: $width;
+    height: $height;
+  }
+}
+
+// Register icons
+// ==========================================================================
+@for $idx from 1 through length($sprite-icons) {
+  $i: $idx - 1; // We want to start with 0
+  $icon-name: nth($sprite-icons, $idx);
+
+  @each $size-name, $size in $sprite-icon-sizes {
+    .#{$global-component-namespace}sprite-icon--#{$size-name}.#{$global-component-namespace}sprite-icon--#{$icon-name},
+    .#{$global-component-namespace}dualtone-icon--#{$size-name}.#{$global-component-namespace}dualtone-icon--#{$icon-name} {
+      background-position-y: -$size * $i;
+    }
+  }
+}

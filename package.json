@@ -115,8 +115,7 @@
     "vue-meta": "^1.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "webfontloader": "^1.6.28",
-    "pictograph": "git+https://802369d9613a3b1790965add7c01f82aa72b6674:x-oauth-basic@github.com/bukalapak/pictograph.git"
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.20",

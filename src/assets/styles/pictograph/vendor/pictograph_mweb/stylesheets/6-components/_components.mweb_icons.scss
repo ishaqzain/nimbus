@@ -1,0 +1,357 @@
+// ==========================================================================
+// MWEB Icons
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+$pictograph-asset-path-prefix: "" !default;
+
+@font-face {
+  font-family: "mweb-icons";
+  src: url("#{$pictograph-asset-path-prefix}/vendor/#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.eot");
+  src: url("#{$pictograph-asset-path-prefix}/vendor/#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.eot") format("embedded-opentype"),
+    url("#{$pictograph-asset-path-prefix}/vendor/#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.woff") format("woff"),
+    url("#{$pictograph-asset-path-prefix}/vendor/#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.ttf") format("truetype"),
+    url("#{$pictograph-asset-path-prefix}/vendor/#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.svg#mweb-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mweb-icons";
+  src: url(asset-path("#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.eot"));
+  src: url(asset-path("#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.eot"))
+    format("embedded-opentype"),
+    url(asset-path("#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.woff"))
+    format("woff"),
+    url(asset-path("#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.ttf"))
+    format("truetype"),
+    url(asset-path("#{$m-icons-font-path}/mweb-icons-#{$m-icons-suffix}.svg#mweb-icons"))
+    format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+//
+// Base component
+// ==========================================================================
+.c-m-icon {
+  // use !important to prevent issues with browser extensions that change fonts
+  font-family: $m-icons-font-name !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Individual icons
+
+  &--location {
+    &:before {
+      content: $m-icon--location;
+    }
+  }
+  &--visibility {
+    &:before {
+      content: $m-icon--visibility;
+    }
+  }
+  &--remove-red-eye {
+    &:before {
+      content: $m-icon--remove-red-eye;
+    }
+  }
+  &--arrived {
+    &:before {
+      content: $m-icon--arrived;
+    }
+  }
+  &--navigate-before {
+    &:before {
+      content: $m-icon--navigate-before;
+    }
+  }
+  &--navigate-next {
+    &:before {
+      content: $m-icon--navigate-next;
+    }
+  }
+  &--check {
+    &:before {
+      content: $m-icon--check;
+    }
+  }
+  &--check-circle {
+    &:before {
+      content: $m-icon--check-circle;
+    }
+  }
+  &--cart-add {
+    &:before {
+      content: $m-icon--cart-add;
+    }
+  }
+  &--arrow-left {
+    &:before {
+      content: $m-icon--arrow-left;
+    }
+  }
+  &--cancel {
+    &:before {
+      content: $m-icon--cancel;
+    }
+  }
+  &--close {
+    &:before {
+      content: $m-icon--close;
+    }
+  }
+  &--remove {
+    &:before {
+      content: $m-icon--remove;
+    }
+  }
+  &--filter {
+    &:before {
+      content: $m-icon--filter;
+    }
+  }
+  &--cart-empty {
+    &:before {
+      content: $m-icon--cart-empty;
+    }
+  }
+  &--sort {
+    &:before {
+      content: $m-icon--sort;
+    }
+  }
+  &--add {
+    &:before {
+      content: $m-icon--add;
+    }
+  }
+  &--logo {
+    &:before {
+      content: $m-icon--logo;
+    }
+  }
+  &--menu {
+    &:before {
+      content: $m-icon--menu;
+    }
+  }
+  &--person {
+    &:before {
+      content: $m-icon--person;
+    }
+  }
+  &--login {
+    display: inline-block;
+    background: url("#{$pictograph-asset-path-prefix}/vendor/pictograph_mweb/images/icon-login.png") 0 0 no-repeat;
+    background: url(asset-path("pictograph_mweb/images/icon-login.png")) 0 0
+      no-repeat;
+    background-size: 16px 20px;
+    width: 16px;
+    height: 20px;
+  }
+  &--search {
+    &:before {
+      content: $m-icon--search;
+    }
+  }
+  &--cart {
+    &:before {
+      content: $m-icon--cart;
+    }
+  }
+  &--expand-less {
+    &:before {
+      content: $m-icon--expand-less;
+    }
+  }
+  &--expand-more {
+    &:before {
+      content: $m-icon--expand-more;
+    }
+  }
+  &--favorite {
+    &:before {
+      content: $m-icon--favorite;
+    }
+  }
+  &--power {
+    &:before {
+      content: $m-icon--power;
+    }
+  }
+  &--settings {
+    &:before {
+      content: $m-icon--settings;
+    }
+  }
+  &--textsms {
+    &:before {
+      content: $m-icon--textsms;
+    }
+  }
+  &--store {
+    &:before {
+      content: $m-icon--store;
+    }
+  }
+  &--swap-horiz {
+    &:before {
+      content: $m-icon--swap-horiz;
+    }
+  }
+  &--bullets {
+    &:before {
+      content: $m-icon--bullets;
+    }
+  }
+  &--help {
+    &:before {
+      content: $m-icon--help;
+    }
+  }
+  &--phone {
+    &:before {
+      content: $m-icon--phone;
+    }
+  }
+  &--tune {
+    &:before {
+      content: $m-icon--tune;
+    }
+  }
+  &--promo-tag {
+    &:before {
+      content: $m-icon--promo-tag;
+    }
+  }
+  &--attach-image {
+    &:before {
+      content: $m-icon--attach-image;
+    }
+  }
+  &--attach {
+    &:before {
+      content: $m-icon--attach;
+    }
+  }
+  &--refresh {
+    &:before {
+      content: $m-icon--refresh;
+    }
+  }
+  &--thumb-up {
+    &:before {
+      content: $m-icon--thumb-up;
+    }
+  }
+  &--help-fill {
+    &:before {
+      content: $m-icon--help-fill;
+    }
+  }
+  &--more {
+    &:before {
+      content: $m-icon--more;
+    }
+  }
+  &--warning {
+    &:before {
+      content: $m-icon--warning;
+    }
+  }
+  &--promo {
+    &:before {
+      content: $m-icon--promo;
+    }
+  }
+  &--hand {
+    &:before {
+      content: $m-icon--hand;
+    }
+  }
+  &--image-broken {
+    &:before {
+      content: $m-icon--image-broken;
+    }
+  }
+  &--whatsapp {
+    &:before {
+      content: $m-icon--whatsapp;
+    }
+  }
+  &--linkedin {
+    &:before {
+      content: $m-icon--linkedin;
+    }
+  }
+  &--more-alt {
+    &:before {
+      display: inline-block;
+      content: $m-icon--more;
+      width: rem-calc(4px);
+      height: rem-calc(16px);
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
+      color: #E26B8D;
+    }
+  }
+  &--line-full {
+    &:before {
+      content: $m-icon--line-full;
+    }
+  }
+  &--line-circle {
+    &:before {
+      content: $m-icon--line-circle;
+    }
+  }
+  &--close-line {
+    &:before {
+      content: $m-icon--close-line;
+    }
+  }
+  &--close-fill {
+    &:before {
+      content: $m-icon--close-fill;
+    }
+  }
+  &--sms {
+    &:before {
+      content: $m-icon--sms;
+    }
+  }
+  &--send-chat {
+    &:before {
+      content: $m-icon--send-chat;
+    }
+  }
+  &--stock {
+    &:before {
+      content: $m-icon--stock;
+    }
+  }
+
+  // Size variants
+  &--small {
+    font-size: rem-calc(16px);
+  }
+}
