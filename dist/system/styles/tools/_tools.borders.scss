@@ -1,0 +1,24 @@
+// ============================================
+// border mixin
+// generate element solid border without radius
+// ============================================
+
+$available-directions: "top" "right" "bottom" "left";
+
+@mixin m-border($width, $direction: null, $color: null, $type: "solid") {
+  @if ($direction == null) {
+    @if ($width == 0) {
+      border: 0 !important;
+    } @else {
+      border: #{$width}px #{$type} $color !important;
+    }
+  } @else {
+    @if (index($available-directions, $direction)) {
+      @if ($width == 0) {
+        border-#{$direction}: 0 !important;
+      } @else {
+        border-#{$direction}: #{$width}px #{$type} $color !important;
+      }
+    }
+  }
+}

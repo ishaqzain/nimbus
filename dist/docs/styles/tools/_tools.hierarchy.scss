@@ -1,0 +1,42 @@
+// ==========================================================================
+// Hierarchy
+// ==========================================================================
+
+@mixin last-selector {
+  $sequences: &;
+  $current-selector: "";
+
+  @each $sequence in $sequences {
+    $current-selector: nth($sequence, -1);
+  }
+
+  @at-root #{$current-selector} {
+    @content;
+  }
+}
+
+//
+// $modifier must be a tupple containts ["$modifier-name", "$is-modifier-enabled?"]
+// $position must be filled with either `root` or `direct
+//
+@mixin modifier($modifier, $position: nil) {
+  @include last-selector {
+    $last-selector: &;
+    $modifier-name: nth($modifier, 1);
+    $modifier-codition: nth($modifier, 2);
+
+    @if ($modifier-codition == true) {
+      $result-selector: #{$modifier-name} #{$last-selector};
+
+      @if ($position == "root") {
+        $result-selector: #{$modifier-name};
+      } @else if ($position == "direct") {
+        $result-selector: #{$modifier-name}#{$last-selector};
+      }
+
+      @at-root #{$result-selector} {
+        @content;
+      }
+    }
+  }
+}

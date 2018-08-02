@@ -1,0 +1,9 @@
+.u-money {
+  &--in {
+    color: $global-color-green-super-dark;
+
+    .currency.positive:before {
+      content: "+";
+    }
+  }
+}

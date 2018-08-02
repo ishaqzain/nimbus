@@ -1,0 +1,114 @@
+// ==========================================================================
+// Borders
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$default-border-color: $global-color-sand-super-dark !default;
+$subtle-border-color: $global-color-sand-dark !default;
+
+.u-border--top {
+  border-top: 1px solid $default-border-color !important;
+}
+
+.u-border--left {
+  border-left: 1px solid $default-border-color !important;
+}
+
+.u-border--bottom {
+  border-bottom: 1px solid $default-border-color !important;
+}
+
+.u-border--right {
+  border-right: 1px solid $default-border-color !important;
+}
+
+.u-border--all {
+  border: 1px solid $default-border-color !important;
+
+  &--subtle {
+    border: 1px solid $subtle-border-color !important;
+  }
+
+  &--red-brand {
+    border: 1px solid $global-color-red-brand !important;
+  }
+}
+
+.u-border--subtle {
+  border-color: $subtle-border-color !important;
+}
+
+.u-border--sand {
+  border-color: $global-color-sand !important;
+}
+
+.u-border--red-brand {
+  border-color: $global-color-red-brand !important;
+}
+
+.u-border--pink-coral {
+  border-color: $global-color-pink-coral !important;
+}
+
+.u-border--ash {
+  border-color: $global-color-ash !important;
+}
+
+.u-border--white {
+  border-color: $global-color-white !important;
+}
+
+// No border
+.u-border--zero {
+  border: 0 !important;
+}
+
+.u-no-border {
+  &--top {
+    border-top: 0 !important;
+  }
+
+  &--bottom {
+    border-bottom: 0 !important;
+  }
+
+  &--left {
+    border-left: 0 !important;
+  }
+
+  &--right {
+    border-right: 0 !important;
+  }
+}
+
+// Border Widths
+.u-border--wide {
+  border-width: 4px !important;
+}
+
+.u-border--medium {
+  border-width: 2px !important;
+}
+
+.u-border--round {
+  border-radius: 2px;
+}
+
+// Border Round
+.u-border--circle {
+  border-radius: 50%;
+}
+
+.u-border-hover--red-brand {
+  &:hover {
+    border-color: $global-color-red-brand;
+  }
+}

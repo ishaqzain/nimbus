@@ -1,0 +1,56 @@
+// ==========================================================================
+// Flag - Extension
+// ==========================================================================
+
+.o-flag--rev.o-flag--transaction > .o-flag__head {
+  width: rem-calc(145px); // Magic Number :(
+  text-align: right;
+}
+
+.o-flag--rev.o-flag--transaction > .o-flag__body {
+  width: rem-calc(100px); // Magic Number :(
+}
+
+.o-flag--rev.o-flag--transaction .o-flag__content {
+  display: block;
+  width: rem-calc(100px);
+  text-overflow: ellipsis;
+  // Required for text-overflow to do anything
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// temporary for ab_navbar_transactions
+.o-flag--rev.o-flag--transactionv2 > .o-flag__head {
+  width: rem-calc(50px);
+  padding-left: 0;
+  text-align: left;
+}
+
+.o-flag--rev.o-flag--transactionv2 > .o-flag__body {
+  width: rem-calc(300px);
+}
+
+.o-flag--rev.o-flag--transactionv2 .o-flag__content {
+  width: rem-calc(210px);
+}
+// end
+
+.o-flag--w-auto {
+  width: auto;
+  max-width: 100%;
+
+  &.o-flag--rev {
+    .o-flag__head {
+      padding-left: 6px;
+    }
+  }
+}
+
+.o-flag--tab-detail > .o-flag__head {
+  @include m-width(16);
+}
+
+.o-flag--tab-shipping > .o-flag__head {
+  @include m-width(23);
+}

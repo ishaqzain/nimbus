@@ -1,0 +1,26 @@
+// ====================
+// Specific object. Homepage above the fold
+// ====================
+
+$banner-height-s: 303px;
+$banner-height-m: 352px;
+$banner-height-l: 402px;
+
+.#{$global-object-namespace} {
+  // wrapper is a centered semi-responsive width container
+  // in most cases this is your outermost content container
+  // unless you would like to spread your content across the whole page
+  &homepage-above-the-fold {
+    & &__banner-row {
+      height: $banner-height-s;
+
+      @include breakpoint("medium") {
+        height: $banner-height-m;
+      }
+
+      @include breakpoint("large") {
+        height: $banner-height-l;
+      }
+    }
+  }
+}

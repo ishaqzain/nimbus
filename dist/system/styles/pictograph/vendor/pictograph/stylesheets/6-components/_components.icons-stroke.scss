@@ -1,0 +1,106 @@
+// ==========================================================================
+// Stroke Icons
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+$pictograph-asset-path-prefix: "" !default;
+
+$enable-icon-stroke--small: false !default;
+$enable-icon-stroke--medium: false !default;
+$enable-icon-stroke--large: false !default;
+
+$icon-stroke-size--small: 16px !default;
+$icon-stroke-size--medium: 24px !default;
+$icon-stroke-size--large: 32px !default;
+
+@font-face {
+  font-family: $bl-stroke-icons-font-name;
+  src: url("#{$pictograph-asset-path-prefix}/vendor/#{$bl-stroke-icons-font-path}bl_stroke_icons.eot");
+  src: url("#{$pictograph-asset-path-prefix}/vendor/#{$bl-stroke-icons-font-path}bl_stroke_icons.eot")
+      format("embedded-opentype"),
+    url("#{$pictograph-asset-path-prefix}/vendor/#{$bl-stroke-icons-font-path}bl_stroke_icons.ttf") format("truetype"),
+    url("#{$pictograph-asset-path-prefix}/vendor/#{$bl-stroke-icons-font-path}bl_stroke_icons.woff") format("woff"),
+    url("#{$pictograph-asset-path-prefix}/vendor/#{$bl-stroke-icons-font-path}bl_stroke_icons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $bl-stroke-icons-font-name;
+  src: url(asset-path($bl-stroke-icons-font-path + "bl_stroke_icons.eot"));
+  src: url(asset-path($bl-stroke-icons-font-path + "bl_stroke_icons.eot")) format("embedded-opentype"),
+    url(asset-path($bl-stroke-icons-font-path + "bl_stroke_icons.ttf")) format("truetype"),
+    url(asset-path($bl-stroke-icons-font-path + "bl_stroke_icons.woff")) format("woff"),
+    url(asset-path($bl-stroke-icons-font-path + "bl_stroke_icons.svg")) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.#{$global-component-namespace}icon-stroke {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: $bl-stroke-icons-font-name !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &--cart:before {
+    content: $c-icon-stroke--ic_cart;
+  }
+
+  &--chat:before {
+    content: $c-icon-stroke--ic_chat;
+  }
+
+  &--kategori:before {
+    content: $c-icon-stroke--ic_kategori;
+  }
+
+  &--notifikasi:before {
+    content: $c-icon-stroke--ic_notifikasi;
+  }
+
+  &--shop:before {
+    content: $c-icon-stroke--ic_shop;
+  }
+
+  &--transaction:before {
+    content: $c-icon-stroke--ic_transaction;
+  }
+}
+
+//
+// Size variants
+// ==========================================================================
+@if ($enable-icon-stroke--small == true) {
+  .#{$global-component-namespace}icon-stroke--small {
+    font-size: rem-calc($icon-size--small) !important;
+  }
+}
+
+@if ($enable-icon-stroke--medium == true) {
+  .#{$global-component-namespace}icon-stroke--medium {
+    font-size: rem-calc($icon-size--medium) !important;
+  }
+}
+
+@if ($enable-icon-stroke--large == true) {
+  .#{$global-component-namespace}icon-stroke--large {
+    font-size: rem-calc($icon-size--large) !important;
+  }
+}

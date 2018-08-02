@@ -1,0 +1,101 @@
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+//
+// Grid-like layout system.
+//
+// The Layout object provides us with a column-style layout system. This file
+// contains the basic structural elements, but classes should be complemented
+// with width Utilities, for example:
+//
+//   <div class="o-layout">
+//     <div class="o-layout__item  u-6of12">
+//     </div>
+//     <div class="o-layout__item  u-6of12">
+//     </div>
+//   </div>
+//
+// The above will create a two-column structure in which each column will
+// fluidly fill half of the width of the parent. We can have more complex
+// systems:
+//
+//   <div class="o-layout">
+//     <div class="o-layout__item  u-1of12  u-1of12-medium">
+//     </div>
+//     <div class="o-layout__item  u-1of12  u-1of12-medium">
+//     </div>
+//     <div class="o-layout__item  u-1of12  u-1of12-medium">
+//     </div>
+//   </div>
+//
+// The above will create a system in which the first item will be 100% width
+// until we enter our medium breakpoint, when it will become 33.333% width. The
+// second and third items will be 50% of their parent, until they also become
+// 33.333% width at the medium breakpoint.
+//
+// We can also manipulate entire layout systems by adding a series of Modifiers
+// to the `.layout` Block. For example:
+//
+//   <div class="o-layout  o-layout--bleed">
+//
+// This will remove gutter from layout item.
+//
+// There are plenty more options available to us: explore them below.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$layout-gutter: $global-spacing-unit !default;
+
+$enable-layout--bleed: false !default;
+
+// Default/mandatory classes.
+// ==========================================================================
+//
+// 1. Allows us to use the layout object on any type of element.
+// 2. We need to defensively reset any box-model properties.
+// 3. Use the negative margin trick for multi-row grids:
+//    http://csswizardry.com/2011/08/building-better-grid-systems/
+//
+.o-layout {
+  @include clearfix;
+
+  display: block; // 1
+  margin: 0; // 2
+  padding: 0; // 2
+  list-style: none; // 1
+  margin-left: rem-calc(-$global-spacing-unit); // 3
+}
+
+//
+// 1. Allows us to use the layout object on any type of element.
+// 2. By default, all layout items are full-width (mobile first).
+// 3. Gutters provided by left padding.
+//
+.o-layout__item {
+  display: block; // 1
+  width: 100%; // 2
+  padding-left: rem-calc($global-spacing-unit); // 3
+  float: left;
+}
+
+// Gutter size modifiers.
+// ==========================================================================
+
+@if ($enable-layout--bleed == true) {
+  .o-layout--bleed {
+    margin-left: 0;
+
+    > .o-layout__item {
+      padding-left: 0;
+    }
+  }
+}

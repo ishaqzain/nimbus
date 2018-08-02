@@ -1,0 +1,19 @@
+// ====================
+// headings
+// ====================
+
+// http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+
+// by default, all heading elements are just a bit bigger than body text
+// sizes, margins, and weights are applied through text utilities
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include txt-size("fair");
+
+  font-weight: normal;
+}

@@ -1,0 +1,113 @@
+//
+// Global Settings
+// ==========================================================================
+@import "settings/settings.colors";
+@import "settings/settings.manifest";
+@import "arin/1-settings/settings.global";
+@import "arin/1-settings/settings.responsive";
+@import "settings/settings.core";
+@import "settings/settings.typography";
+// @import "pictograph/stylesheets/1-settings/settings.icons";
+
+//
+// Global Mixin and Function
+// ==========================================================================
+@import "arin/2-tools/tools.rem";
+@import "arin/2-tools/tools.font-size";
+@import "arin/2-tools/tools.clearfix";
+@import "arin/2-tools/tools.color-level";
+@import "arin/2-tools/tools.math";
+@import "arin/2-tools/tools.decimal";
+@import "arin/2-tools/tools.z-index";
+@import "arin/2-tools/tools.responsive";
+@import "tools/tools.borders";
+@import "tools/tools.box-shadow";
+@import "tools/tools.hierarchy";
+@import "tools/tools.miscs";
+@import "tools/tools.dimensions";
+@import "tools/tools.text-size";
+@import "tools/tools.whitespaces";
+@import "tools/tools.triangle";
+@import "tools/tools.opacity";
+@import "tools/tools.collapsible";
+@import "tools/tools.scroll";
+
+//
+// Reset and Generic Rules
+// ==========================================================================
+@import "arin/3-generic/generic.reset";
+@import "arin/3-generic/generic.box-sizing";
+
+//
+// Base Styling for Elements
+// ==========================================================================
+@import "arin/4-elements/elements.images";
+@import "arin/4-elements/elements.links";
+@import "arin/4-elements/elements.page";
+@import "elements/elements.button";
+@import "elements/elements.links";
+@import "elements/elements.headings";
+@import "elements/elements.paragraph";
+@import "elements/elements.list";
+@import "elements/elements.code";
+@import "elements/elements.hr";
+@import "elements/elements.form";
+
+//
+// Design Patterns
+// ==========================================================================
+@import "arin/5-objects/objects.flag";
+@import "arin/5-objects/objects.box";
+@import "arin/5-objects/objects.split";
+@import "arin/5-objects/objects.container";
+@import "arin/5-objects/objects.layout";
+@import "arin/5-objects/objects.ratio";
+@import "objects/objects.container";
+@import "objects/objects.layout";
+@import "objects/objects.box";
+@import "objects/objects.list";
+@import "objects/objects.flag";
+@import "objects/objects.homepage_above_the_fold";
+
+//
+// Utilitiy classes that do one thing and do it well!
+// ==========================================================================
+@import "utilities/utilities.vue";
+@import "arin/7-utilities/utilities.width";
+@import "utilities/utilities.texts";
+@import "utilities/utilities.animation";
+@import "utilities/utilities.hr";
+@import "utilities/utilities.whitespaces";
+@import "utilities/utilities.colors";
+@import "utilities/utilities.widths";
+@import "utilities/utilities.border";
+@import "utilities/utilities.hover";
+@import "utilities/utilities.money";
+@import "utilities/utilities.alignment";
+@import "utilities/utilities.visibility";
+@import "utilities/utilities.miscs";
+@import "utilities/utilities.borders";
+@import "utilities/utilities.position";
+@import "utilities/utilities.background";
+@import "utilities/utilities.line_height";
+@import "utilities/utilities.height";
+@import "utilities/utilities.scroll";
+@import "utilities/utilities.transition";
+@import "utilities/utilities.filters";
+@import "utilities/utilities.z-index";
+
+//
+// Pictograph Settings, for icon
+// ==========================================================================
+$global-component-namespace: "c-";
+$pictograph-asset-path-prefix: "~pictograph";
+$imported-global-settings: true;
+
+@import "~pictograph/pictograph";
+
+//
+// Global Vendor
+// ==========================================================================
+@import "vendors/vue-multiselect";
+@import "vendors/v-tooltip";
+@import "vendors/vue-flash-message";

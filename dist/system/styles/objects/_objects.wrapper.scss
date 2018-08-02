@@ -1,0 +1,29 @@
+// ====================
+// wrapper
+// ====================
+
+$width-wrapper-s: 958px;
+$width-wrapper-m: 1140px;
+$width-wrapper-l: 1316px;
+
+.#{$global-object-namespace} {
+  // wrapper is a centered semi-responsive width container
+  // in most cases this is your outermost content container
+  // unless you would like to spread your content across the whole page
+  &wrapper {
+    @include clearfix;
+
+    position: relative;
+    width: $width-wrapper-s;
+    margin: 0 auto;
+    padding: 0;
+
+    @include breakpoint("medium") {
+      width: $width-wrapper-m;
+    }
+
+    @include breakpoint("large") {
+      width: $width-wrapper-l;
+    }
+  }
+}

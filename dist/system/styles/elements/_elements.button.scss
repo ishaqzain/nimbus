@@ -1,0 +1,10 @@
+// Adjust button letter spacing to match link buttons
+
+button {
+  letter-spacing: -0.5px;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}

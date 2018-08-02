@@ -1,0 +1,38 @@
+$enable-input-pseudo-class-invalid: false !default;
+
+@mixin input-transition {
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+@mixin inp-border {
+  border: 1px solid $global-color-ash-light;
+}
+
+@mixin inp-focus-border {
+  border-color: $global-color-azure;
+  box-shadow: 0 0 4px 0 $global-color-azure;
+}
+
+@mixin inp-error-border {
+  border-color: $global-color-pink-coral;
+}
+
+@mixin inp-error-focus-border {
+  border-color: $global-color-pink-coral;
+  box-shadow: 0 0 4px 0 $global-color-pink-coral;
+}
+
+@mixin inp-success-border {
+  border-color: $global-color-green-dark;
+}
+
+@mixin inp-success-focus-border {
+  border-color: $global-color-green-dark;
+  box-shadow: 0 0 4px 0 $global-color-green-dark;
+}
+
+@mixin inp-select-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADQSURBVFiF1c+7ccMwFEXBZS0oUqGgzE2+WqzE9li2KOIrkncGAZDg7BIRF3w45/ICJ0XklNJt+b6dDJFTSjdYfr+eBPETzx8Ah0c8xPMEwGER/+JZAXA4xNN4XgA4DGI1ng0AuyNexlMAYDfEZjyFAN6OKIqnAsDbEMXxVAKYjqiKpwHANER1PI0AhiOa4ukAMAzRHE8ngG5EVzwDADQjuuMZBKAaMSSegQCKEcPiGQxgEzE0ngkAVhHD46cuIi4R8fl1rnv3NC0ickTkmX/cAeicgKu/i7a4AAAAAElFTkSuQmCC");
+}
+
+//scss-lint:enable VendorPrefix, PseudoElement

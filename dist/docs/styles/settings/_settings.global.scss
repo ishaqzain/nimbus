@@ -1,0 +1,151 @@
+// ==========================================================================
+// Manifest Settings
+// ==========================================================================
+//
+// This is the file where you can edit and modify default value from
+// framework or your dependency.
+//
+
+// Global Settings:
+// ==========================================================================
+$global-font-family: "noto serif", serif;
+$global-font-size: 16px;
+$global-font-weight: 400;
+$global-line-height: 25px;
+$global-text-color: $global-color-blue-dark;
+$global-background-color: $global-color-white;
+$global-border-radius: 4px;
+
+$global-spacing-unit: 16px;
+$global-spacing-levels: 10;
+
+$global-spacing-unit-factor-micro: 0.25;
+$global-spacing-unit-factor-tiny: 0.5;
+$global-spacing-unit-factor-small: 0.75;
+$global-spacing-unit-factor-medium: 1;
+$global-spacing-unit-factor-large: 1.5;
+$global-spacing-unit-factor-huge: 2;
+
+$global-object-namespace: "o-";
+$global-component-namespace: "c-";
+$global-utility-namespace: "u-";
+
+$support-old-ie: false;
+
+$imported-global-settings: true;
+
+//
+// Private/framework only reassignment. Do not alter anything below.
+// ==========================================================================
+
+// Micro   = 4
+// Tiny    = 8
+// Small   = 12
+// Medium  = 16
+// Large   = 24
+// Huge    = 32
+
+$global-spacing-unit--micro: round($global-spacing-unit * $global-spacing-unit-factor-micro);
+$global-spacing-unit--tiny: round($global-spacing-unit * $global-spacing-unit-factor-tiny);
+$global-spacing-unit--small: round($global-spacing-unit * $global-spacing-unit-factor-small);
+$global-spacing-unit--medium: round($global-spacing-unit * $global-spacing-unit-factor-medium);
+$global-spacing-unit--large: round($global-spacing-unit * $global-spacing-unit-factor-large);
+$global-spacing-unit--huge: round($global-spacing-unit * $global-spacing-unit-factor-huge);
+
+// ==========================================================================
+// Responsive Settings
+// ==========================================================================
+
+//
+// Hold our breakpoint aliases and conditions in a list.
+// The breakpoint value set to `em` with 16px as base pixel size
+// These can be invoked later on via the `media-query()` mixin found in
+// 2-tools/_tools.responsive.
+//
+
+$screen: "only screen";
+
+// 45em     == 720px
+// 64em     == 1024px
+// 90em     == 1440px
+$breakpoints: (
+  "tiny-only" "#{$screen} and (max-width: 20em)",
+  "small" "#{$screen}",
+  "small-only" "#{$screen} and (max-width: 71.250em)",
+  "medium" "#{$screen} and (min-width: 71.313em)",
+  "medium-only" "#{$screen} and (min-width: 71.313em) and (max-width: 82.500em)",
+  "large" "#{$screen} and (min-width: 82.563em)",
+  "portrait" "#{$screen} and (orientation: portrait)",
+  "landscape" "#{$screen} and (orientation: landscape)",
+  "retina" "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+);
+
+// Tools - z-index settings:
+// ==========================================================================
+$z-layers: (
+  "over-the-top": 9999,
+  "modal": 1000,
+  "modal-overlay": 999,
+  "header": 100,
+  "dropdown": 10,
+  "dropdown-overlay": 9,
+  "tooltip": 7,
+  "input-icon": 6,
+  "input-focus": 5,
+  "default": 1,
+  "below": -1,
+  "bottomless-pit": -9000,
+); // usage: .modal { z-index: z("modal") };
+
+// Elements - Links settings:
+// ==========================================================================
+$anchor-font-weight: 500;
+$anchor-font-color: $global-color-blue-dark;
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+
+// Components - Buttons settings:
+// ==========================================================================
+$enable-btn--tiny: true;
+$enable-btn--small: true;
+$enable-btn--large: true;
+$enable-btn--red: true;
+$enable-btn--green: true;
+$enable-btn--yellow: true;
+$enable-btn--pink: true;
+$enable-btn--disabled: true;
+$enable-btn--block: true;
+$enable-btn--ghost: true;
+$enable-btn--naked: true;
+$enable-btn-group: true;
+$enable-btn--tag: true;
+$enable-btn--dropdown: true;
+$enable-btn--pill: true;
+
+// Objects - Container settings:
+// ==========================================================================
+$container-width: 740px;
+
+// Components - Icon settings:
+// ==========================================================================
+$enable-icon--small: true;
+$enable-icon--medium: true;
+$enable-icon--duotone: true;
+
+// Components - Header settings:
+// ==========================================================================
+$main-header-height: 60px;
+
+// Components - Footer settings:
+// ==========================================================================
+$main-footer-height: 94px;
+
+// Components - Article settings:
+// ==========================================================================
+$article-content-width: $container-width;
+
+// Components - Slider settings:
+// ==========================================================================
+$slider-content-padding-h: 40px;
+$slider-content-padding-h-medium: 60px;
+$slider-content-padding-h-large: 83px;

@@ -1,0 +1,11 @@
+@function f-dimension($level) {
+  @return rem-calc($global-desktop-spacing-unit * $level);
+}
+
+@mixin m-height($level) {
+  height: f-dimension($level);
+}
+
+@mixin m-width($level) {
+  width: f-dimension($level);
+}

@@ -1,0 +1,37 @@
+// ==========================================================================
+// List
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+ul,
+ol {
+  margin-left: rem-calc($global-spacing-unit--small);
+
+  > li {
+    padding-left: rem-calc($global-spacing-unit--tiny);
+    margin-bottom: rem-calc($global-spacing-unit--tiny);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+ul {
+  > li {
+    line-height: 1.43;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: disc;
+  }
+}

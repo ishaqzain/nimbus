@@ -1,0 +1,19 @@
+// ==========================================================================
+// Box Shadow
+// ==========================================================================
+@import "../settings/settings.colors";
+
+@mixin panelize($hoverable: false) {
+  background-color: $global-color-white;
+  box-shadow: 0 2px 1px transparentize($global-color-black, 0.95);
+  border-radius: $global-border-radius;
+  border: 1px solid $global-color-sand-dark;
+  transition: border 0.2s ease-out;
+
+  @if ($hoverable == true) {
+    &:hover {
+      border-color: $global-color-pink-coral;
+      box-shadow: 0 1px 1px transparentize($global-color-pink-coral, 0.95);
+    }
+  }
+}

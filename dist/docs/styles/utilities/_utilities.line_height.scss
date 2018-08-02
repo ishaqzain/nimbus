@@ -1,0 +1,21 @@
+// ==========================================================================
+// Widths
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+$enable-column-line-height: 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50 !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+$name: ".#{$global-utility-namespace}line-height";
+
+@each $section in $enable-column-line-height {
+  #{$name}--#{$section} {
+    line-height: #{$section}px !important;
+  }
+}

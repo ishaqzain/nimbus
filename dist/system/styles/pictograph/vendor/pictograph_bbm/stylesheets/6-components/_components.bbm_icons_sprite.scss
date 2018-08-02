@@ -1,0 +1,109 @@
+// ==========================================================================
+// Duotone Icon
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+$pictograph-asset-path-prefix: "" !default;
+
+$enable-icon-duotone--medium: false !default;
+$enable-icon-duotone--large: false !default;
+
+$bbm-icon-duotone-size--small: 16px !default;
+$bbm-icon-duotone-size--medium: 24px !default;
+$bbm-icon-duotone-size--large: 32px !default;
+$bbm-icon-duotone-path: "pictograph_bbm/images/bbm-icon-dualtone-sprite.png" !default;
+
+$bbm-icon-duotone-positions: (
+  add-cart: 1,
+  agent: 17,
+  arrow-backward: 2,
+  bukareksa: 3,
+  caret-down: 4,
+  caret-right: 5,
+  cart: 6,
+  channel: 7,
+  check-blue: 8,
+  chevron-grey: 9,
+  chevron: 10,
+  circled-chevron: 11,
+  close: 12,
+  favorite-outline: 13,
+  favorite: 14,
+  filter: 15,
+  flag: 16,
+  help: 0,
+  location-blue: 18,
+  location-outline: 19,
+  logo: 20,
+  message: 21,
+  other: 22,
+  photo: 23,
+  premium-seller: 24,
+  search: 25,
+  setting: 26,
+  shipping-time: 27,
+  store: 28,
+  subscription: 29,
+  thumb-down: 30,
+  thumb-up: 31,
+  transaction: 32,
+  wallet: 33,
+  send: 34,
+  top-seller: 35,
+) !default;
+
+.#{$global-component-namespace}icon-duotone-bbm {
+  width: $bbm-icon-duotone-size--small;
+  height: $bbm-icon-duotone-size--small;
+  background: url("#{$pictograph-asset-path-prefix}/vendor/#{$bbm-icon-duotone-path}") no-repeat;
+  background: url(asset-path($bbm-icon-duotone-path)) no-repeat;
+  background-position: 0 9999px;
+  background-size: $bbm-icon-duotone-size--small;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@if ($enable-icon-duotone--medium == true) {
+  .#{$global-component-namespace}icon-duotone-bbm--medium {
+    width: $bbm-icon-duotone-size--medium;
+    height: $bbm-icon-duotone-size--medium;
+    background-size: $bbm-icon-duotone-size--medium;
+  }
+}
+
+@if ($enable-icon-duotone--large == true) {
+  .#{$global-component-namespace}icon-duotone-bbm--large {
+    width: $bbm-icon-duotone-size--large;
+    height: $bbm-icon-duotone-size--large;
+    background-size: $bbm-icon-duotone-size--large;
+  }
+}
+
+@each $variant, $position in $bbm-icon-duotone-positions {
+  .#{$global-component-namespace}icon-duotone--bbm-#{$variant} {
+    background-position: 0 #{-$position * $bbm-icon-duotone-size--small};
+
+    @at-root {
+      @if ($enable-icon-duotone--medium == true) {
+        .#{$global-component-namespace}icon-duotone-bbm--medium#{&} {
+          background-position: 0 #{-$position * $bbm-icon-duotone-size--medium};
+        }
+      }
+
+      @if ($enable-icon-duotone--large == true) {
+        .#{$global-component-namespace}icon-duotone-bbm--large#{&} {
+          background-position: 0 #{-$position * $bbm-icon-duotone-size--large};
+        }
+      }
+    }
+  }
+}

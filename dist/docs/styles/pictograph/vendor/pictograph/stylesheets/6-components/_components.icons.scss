@@ -1,0 +1,446 @@
+// ==========================================================================
+// Icons
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+$enable-icon--small: false !default;
+$enable-icon--medium: false !default;
+$enable-icon--large: false !default;
+$enable-icon--huge: false !default;
+
+// Icon sizes
+$icon-size--small: 16px !default;
+$icon-size--medium: 24px !default;
+$icon-size--large: 32px !default;
+$icon-size--huge: 64px !default;
+
+//
+// Base component
+// ==========================================================================
+.#{$global-component-namespace}icon {
+  // use !important to prevent issues with browser extensions that change fonts
+  font-family: $bl-icons-font-name !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Individual icons
+  &--visibility:before {
+    content: $c-icon--visibility;
+  }
+  &--zoom-in:before {
+    content: $c-icon--zoom-in;
+  }
+  &--warning:before {
+    content: $c-icon--warning;
+  }
+  &--zoom-out:before {
+    content: $c-icon--zoom-out;
+  }
+  &--wallet:before {
+    content: $c-icon--wallet;
+  }
+  &--view-module:before {
+    content: $c-icon--view-module;
+  }
+  &--store:before {
+    content: $c-icon--store;
+  }
+  &--thumb-up:before {
+    content: $c-icon--thumb-up;
+  }
+  &--tag:before {
+    content: $c-icon--tag;
+  }
+  &--transaction:before {
+    content: $c-icon--transaction;
+  }
+  &--star:before {
+    content: $c-icon--star;
+  }
+  &--time:before {
+    content: $c-icon--time;
+  }
+  &--thumb-down:before {
+    content: $c-icon--thumb-down;
+  }
+  &--upload:before {
+    content: $c-icon--upload;
+  }
+  &--trending-up:before {
+    content: $c-icon--trending-up;
+  }
+  &--star-border:before {
+    content: $c-icon--star-border;
+  }
+  &--person:before {
+    content: $c-icon--person;
+  }
+  &--ribbon:before {
+    content: $c-icon--ribbon;
+  }
+  &--sort:before {
+    content: $c-icon--sort;
+  }
+  &--reply:before {
+    content: $c-icon--reply;
+  }
+  &--remove-circle:before {
+    content: $c-icon--remove-circle;
+  }
+  &--settings:before {
+    content: $c-icon--settings;
+  }
+  &--print:before {
+    content: $c-icon--print;
+  }
+  &--search:before {
+    content: $c-icon--search;
+  }
+  &--remove:before {
+    content: $c-icon--remove;
+  }
+  &--remove-circle-outline:before {
+    content: $c-icon--remove-circle-outline;
+  }
+  &--notifications:before {
+    content: $c-icon--notifications;
+  }
+  &--label:before {
+    content: $c-icon--label;
+  }
+  &--more-horiz:before {
+    content: $c-icon--more-horiz;
+  }
+  &--menu:before {
+    content: $c-icon--menu;
+  }
+  &--link:before {
+    content: $c-icon--link;
+  }
+  &--navigation:before {
+    content: $c-icon--navigation;
+  }
+  &--location:before {
+    content: $c-icon--location;
+  }
+  &--list:before {
+    content: $c-icon--list;
+  }
+  &--more-vert:before {
+    content: $c-icon--more-vert;
+  }
+  &--map:before {
+    content: $c-icon--map;
+  }
+  &--forum:before {
+    content: $c-icon--forum;
+  }
+  &--info-outline:before {
+    content: $c-icon--info-outline;
+  }
+  &--import-contacts:before {
+    content: $c-icon--import-contacts;
+  }
+  &--https:before {
+    content: $c-icon--https;
+  }
+  &--info:before {
+    content: $c-icon--info;
+  }
+  &--inbox:before {
+    content: $c-icon--inbox;
+  }
+  &--help:before {
+    content: $c-icon--help;
+  }
+  &--home:before {
+    content: $c-icon--home;
+  }
+  &--guarantee:before {
+    content: $c-icon--guarantee;
+  }
+  &--help-outline:before {
+    content: $c-icon--help-outline;
+  }
+  &--done:before {
+    content: $c-icon--done;
+  }
+  &--file-download:before {
+    content: $c-icon--file-download;
+  }
+  &--favorite:before {
+    content: $c-icon--favorite;
+  }
+  &--flag:before {
+    content: $c-icon--flag;
+  }
+  &--file-upload:before {
+    content: $c-icon--file-upload;
+  }
+  &--error:before {
+    content: $c-icon--error;
+  }
+  &--favorite-outline:before {
+    content: $c-icon--favorite-outline;
+  }
+  &--email:before {
+    content: $c-icon--email;
+  }
+  &--error-outline:before {
+    content: $c-icon--error-outline;
+  }
+  &--filter-list:before {
+    content: $c-icon--filter-list;
+  }
+  &--creditcard:before {
+    content: $c-icon--creditcard;
+  }
+  &--check-circle:before {
+    content: $c-icon--check-circle;
+  }
+  &--chevron-left:before {
+    content: $c-icon--chevron-left;
+  }
+  &--chevron-up:before {
+    content: $c-icon--chevron-up;
+  }
+  &--chat-bubble-black:before {
+    content: $c-icon--chat-bubble-black;
+  }
+  &--chevron-down:before {
+    content: $c-icon--chevron-down;
+  }
+  &--delete:before {
+    content: $c-icon--delete;
+  }
+  &--chevron-right:before {
+    content: $c-icon--chevron-right;
+  }
+  &--close:before {
+    content: $c-icon--close;
+  }
+  &--create:before {
+    content: $c-icon--create;
+  }
+  &--arrow-forward:before {
+    content: $c-icon--arrow-forward;
+  }
+  &--cart:before {
+    content: $c-icon--cart;
+  }
+  &--arrow-dropdown:before {
+    content: $c-icon--arrow-dropdown;
+  }
+  &--calendar:before {
+    content: $c-icon--calendar;
+  }
+  &--attach:before {
+    content: $c-icon--attach;
+  }
+  &--autorenew:before {
+    content: $c-icon--autorenew;
+  }
+  &--arrow-upward:before {
+    content: $c-icon--arrow-upward;
+  }
+  &--chat-black:before {
+    content: $c-icon--chat-black;
+  }
+  &--arrow-dropup:before {
+    content: $c-icon--arrow-dropup;
+  }
+  &--arrow-downward:before {
+    content: $c-icon--arrow-downward;
+  }
+  &--add-cart:before {
+    content: $c-icon--add-cart;
+  }
+  &--arrow-backward:before {
+    content: $c-icon--arrow-backward;
+  }
+  &--announcement:before {
+    content: $c-icon--announcement;
+  }
+  &--account:before {
+    content: $c-icon--account;
+  }
+  &--add-circle-outline:before {
+    content: $c-icon--add-circle-outline;
+  }
+  &--add-circle:before {
+    content: $c-icon--add-circle;
+  }
+  &--add-box:before {
+    content: $c-icon--add-box;
+  }
+  &--add:before {
+    content: $c-icon--add;
+  }
+  &--add-photo:before {
+    content: $c-icon--add-photo;
+  }
+  &--sent:before {
+    content: $c-icon--sent;
+  }
+  &--delivered:before {
+    content: $c-icon--delivered;
+  }
+  &--remitted:before {
+    content: $c-icon--remitted;
+  }
+  &--facebook:before {
+    content: $c-icon--facebook;
+  }
+  &--twitter:before {
+    content: $c-icon--twitter;
+  }
+  &--google:before {
+    content: $c-icon--google;
+  }
+  &--pinterest:before {
+    content: $c-icon--pinterest;
+  }
+  &--hourglass:before {
+    content: $c-icon--hourglass;
+  }
+  &--referral:before {
+    content: $c-icon--referral;
+  }
+  &--reply-right:before {
+    content: $c-icon--reply-right;
+  }
+  &--show-password:before {
+    content: $c-icon--show-password;
+  }
+  &--hide-password:before {
+    content: $c-icon--hide-password;
+  }
+  &--play:before {
+    content: $c-icon--play;
+  }
+  &--download-apps:before {
+    content: $c-icon--download-apps;
+  }
+  &--promo-tag:before {
+    content: $c-icon--promo-tag;
+  }
+  &--attach-image:before {
+    content: $c-icon--attach-image;
+  }
+  &--cancel:before {
+    content: $c-icon--cancel;
+  }
+  &--refresh:before {
+    content: $c-icon--refresh;
+  }
+  &--copy:before {
+    content: $c-icon--copy;
+  }
+  &--promo:before {
+    content: $c-icon--promo;
+  }
+  &--hand:before {
+    content: $c-icon--hand;
+  }
+  &--whatsapp:before {
+    content: $c-icon--whatsapp;
+  }
+  &--linkedin:before {
+    content: $c-icon--linkedin;
+  }
+  &--cart-alt:before {
+    content: $c-icon--cart-alt;
+  }
+  &--camera-alt:before {
+    content: $c-icon--camera-alt;
+  }
+  &--flash-on:before {
+    content: $c-icon--flash-on;
+  }
+  &--flash-off:before {
+    content: $c-icon--flash-off;
+  }
+  &--flash-auto:before {
+    content: $c-icon--flash-auto;
+  }
+  &--gallery:before {
+    content: $c-icon--gallery;
+  }
+  &--line-circle:before {
+    content: $c-icon--line-circle;
+  }
+  &--line-full:before {
+    content: $c-icon--line-full;
+  }
+  &--close-fill:before {
+    content: $c-icon--close-fill;
+  }
+  &--close-line:before {
+    content: $c-icon--close-line;
+  }
+  &--sms:before {
+    content: $c-icon--sms;
+  }
+  &--chat:before {
+    content: $c-icon--chat;
+  }
+  &--categorynav:before {
+    content: $c-icon--categorynav;
+  }
+  &--volume-on:before {
+    content: $c-icon--volume-on;
+  }
+  &--volume-off:before {
+    content: $c-icon--volume-off;
+  }
+  &--stock:before {
+    content: $c-icon--stock;
+  }
+  &--add-photo-new:before {
+    content: $c-icon--add-photo-new;
+  }
+}
+
+//
+// Size variants
+// ==========================================================================
+@if ($enable-icon--small == true) {
+  .#{$global-component-namespace}icon--small {
+    font-size: rem-calc($icon-size--small) !important;
+  }
+}
+
+@if ($enable-icon--medium == true) {
+  .#{$global-component-namespace}icon--medium {
+    font-size: rem-calc($icon-size--medium) !important;
+  }
+}
+
+@if ($enable-icon--large == true) {
+  .#{$global-component-namespace}icon--large {
+    font-size: rem-calc($icon-size--large) !important;
+  }
+}
+
+@if ($enable-icon--huge == true) {
+  .#{$global-component-namespace}icon--huge {
+    font-size: rem-calc($icon-size--huge) !important;
+  }
+}

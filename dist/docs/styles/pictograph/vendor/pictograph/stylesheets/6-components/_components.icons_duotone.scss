@@ -1,0 +1,275 @@
+// ==========================================================================
+// Duotone Icon
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+$pictograph-asset-path-prefix: "" !default;
+
+$enable-icon-duotone--medium: false !default;
+$enable-icon-duotone--large: false !default;
+
+$icon-duotone-size--small: 16px !default;
+$icon-duotone-size--medium: 24px !default;
+$icon-duotone-size--large: 32px !default;
+$icon-duotone-path: "pictograph/images/icon-dualtone-sprite.png" !default;
+$icon-duotone-positions: (
+  help: 0,
+  report: 1,
+  seller-setting: 2,
+  seller-setting-alt: 3,
+  subscribe: 4,
+  motorbike: 5,
+  ticket: 6,
+  version: 7,
+  info: 8,
+  badge: 9,
+  acc-summary: 10,
+  lapak-setting: 11,
+  follow: 12,
+  beauty: 13,
+  stationary: 14,
+  save-address: 15,
+  community: 16,
+  badge-alt: 17,
+  feedback: 18,
+  phone: 19,
+  store: 20,
+  medical: 21,
+  industrial: 22,
+  address: 23,
+  blog: 24,
+  trusted-seller: 25,
+  subscription: 26,
+  search: 27,
+  game-voucher: 28,
+  fashion-men: 29,
+  food: 30,
+  verification: 31,
+  about: 32,
+  top-seller: 33,
+  notification: 34,
+  cart: 35,
+  promo: 36,
+  fashion-women: 37,
+  home-living: 38,
+  envelope: 39,
+  folder: 40,
+  seller: 41,
+  chat: 42,
+  transaction: 43,
+  electricity: 44,
+  phone-alt: 45,
+  baby-care: 46,
+  email-verified: 47,
+  wallet: 48,
+  product: 49,
+  seller-page: 50,
+  profile: 51,
+  topup-wallet: 52,
+  computer: 53,
+  fashion-kid: 54,
+  phone-verified: 55,
+  redeem: 56,
+  push: 57,
+  store-product: 58,
+  seller-page-alt: 59,
+  data-plan: 60,
+  electronic: 61,
+  bicycle: 62,
+  save-phone: 63,
+  boy: 64,
+  bukaiklan: 65,
+  seller-setting-alt-2: 66,
+  harbolnas: 67,
+  phone-credit: 68,
+  camera: 69,
+  pingpong: 70,
+  download: 71,
+  girl: 72,
+  promoted-push: 73,
+  product-stacked: 74,
+  filter: 75,
+  sort: 76,
+  auto: 77,
+  games: 78,
+  empty: 79,
+  baggage: 80,
+  calendar: 81,
+  food-alt: 82,
+  hourglass: 83,
+  plane: 84,
+  sort-alt: 85,
+  sort-alt-asc: 86,
+  sort-alt-desc: 87,
+  switch: 88,
+  tax: 89,
+  trip-one: 90,
+  trip-return: 91,
+  train: 92,
+  product-processed: 93,
+  product-delivered: 94,
+  product-received: 95,
+  product-remitted: 96,
+  product-history: 97,
+  voucher: 98,
+  product-refunded: 99,
+  discount: 100,
+  bundling: 101,
+  nego: 102,
+  wholesale: 103,
+  confirm-payment: 105,
+  paid: 106,
+  remitted: 108,
+  time-up: 110,
+  target: 111,
+  sales-up: 112,
+  graph-up: 113,
+  feature-renewal: 114,
+  buyer-reminder: 115,
+  seller-reminder: 116,
+  other: 117,
+  event: 118,
+  dislike: 119,
+  courier: 120,
+  seller-notes: 121,
+  payment: 122,
+  official: 123,
+  coupon: 124,
+  plus: 125,
+  print: 126,
+  notification-setting: 127,
+  push-notif-setting: 128,
+  new-email: 129,
+  user-info: 130,
+  calculator: 131,
+  info-alert: 132,
+  setting: 133,
+  security: 134,
+  bukareksa: 135,
+  zakat: 136,
+  fintech: 137,
+  bukaemas: 139,
+  fast-process: 140,
+  invited-friend: 141,
+  finished-shopping: 142,
+  rewards-received: 143,
+  expired: 144,
+  pembeli-prioritas: 145,
+  product-history-alt: 146,
+  verified-account: 147,
+  computer-gadget: 148,
+  hobby-sport: 149,
+  stationary-office: 150,
+  automotive-accessories: 151,
+  fashion-lifestyle: 152,
+  furniture-electronic: 153,
+  health-beauty: 154,
+  daily-need: 155,
+  list: 156,
+  bpjs-kesehatan: 157,
+  bl-credit: 158,
+  dompet-lapak: 159,
+  beli-rutin: 160,
+  pdam: 161,
+  authentication: 162,
+  password: 163,
+  bl-assurance: 164,
+  voucher-code: 165,
+  bukadompet-pin: 166,
+  login-alert: 167,
+  multifinance: 168,
+  token-listrik: 169,
+  tagihan-listrik: 170,
+  gift: 171,
+  events: 172,
+  call-center: 173,
+  nominal: 174,
+  flash-deal: 175,
+  resi-otomatis: 176,
+  affiliate: 177,
+  bukapengadaan: 178,
+  brand-bayi: 179,
+  brand-fashion: 180,
+  brand-food: 181,
+  brand-furniture: 182,
+  brand-gadget: 183,
+  brand-hobi: 184,
+  brand-industrial: 185,
+  brand-kesehatan: 186,
+  brand-otomotif: 187,
+  brand-stationery: 188,
+  brand-voucher: 189,
+  financial-calculator: 190,
+  news: 191,
+  subscribers: 192,
+  sell-reksa: 193,
+  career-customerservice: 194,
+  career-datadriven: 195,
+  career-novelty: 196,
+  career-persistence: 197,
+  career-speed: 198,
+  career-togetherness: 199,
+  katalog: 200,
+  bukamall: 201,
+  bus: 202,
+) !default;
+
+.#{$global-component-namespace}icon-duotone {
+  width: $icon-duotone-size--small;
+  height: $icon-duotone-size--small;
+  background: url("#{$pictograph-asset-path-prefix}/vendor/#{$icon-duotone-path}") no-repeat;
+  background: url(asset-path($icon-duotone-path)) no-repeat;
+  background-position: 0 9999px;
+  background-size: $icon-duotone-size--small;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@if ($enable-icon-duotone--medium == true) {
+  .#{$global-component-namespace}icon-duotone--medium {
+    width: $icon-duotone-size--medium;
+    height: $icon-duotone-size--medium;
+    background-size: $icon-duotone-size--medium;
+  }
+}
+
+@if ($enable-icon-duotone--large == true) {
+  .#{$global-component-namespace}icon-duotone--large {
+    width: $icon-duotone-size--large;
+    height: $icon-duotone-size--large;
+    background-size: $icon-duotone-size--large;
+  }
+}
+
+@each $variant, $position in $icon-duotone-positions {
+  .#{$global-component-namespace}icon-duotone--#{$variant} {
+    background-position: 0 #{-$position * $icon-duotone-size--small};
+
+    @at-root {
+      @if ($enable-icon-duotone--medium == true) {
+        .#{$global-component-namespace}icon-duotone--medium#{&} {
+          background-position: 0 #{-$position * $icon-duotone-size--medium};
+        }
+      }
+
+      @if ($enable-icon-duotone--large == true) {
+        .#{$global-component-namespace}icon-duotone--large#{&} {
+          background-position: 0 #{-$position * $icon-duotone-size--large};
+        }
+      }
+    }
+  }
+}
+
+.#{$global-component-namespace}icon-duotone--feedback-negative {
+  transform: rotate(180deg);
+}
