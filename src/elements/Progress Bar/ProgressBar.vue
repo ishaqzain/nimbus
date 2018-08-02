@@ -1,7 +1,7 @@
 <template>
   <div
     class="c-progress c-progress-green"
-    :class="getClasses">
+    :class="progressClasses">
     <div
       class="c-progress__bar"
       :style="{width: `${score}%`, transition: '1s widht ease'}">
@@ -40,7 +40,7 @@ export default {
     },
   },
   computed: {
-    getClasses() {
+    progressClasses() {
       return [this.color ? `c-progress--${this.color}` : ""]
     },
     score() {

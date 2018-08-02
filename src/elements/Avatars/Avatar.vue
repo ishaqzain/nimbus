@@ -2,7 +2,7 @@
   <component 
     :is="type" 
     class="c-avatar" 
-    :class="getClasses" 
+    :class="avatarClasses" 
     :href="avatarUrl">
     <img 
       :alt="imageAlt" 
@@ -50,25 +50,25 @@ export default {
      */
     avatarUrl: {
       type: String,
-      default: null,
+      default: "",
     },
     /**
      * The src attribute specifies the URL (web address) of the image
      */
     imageUrl: {
       type: String,
-      default: null,
+      default: "",
     },
     /**
      * The value of the alt attribute should describe the image
      */
     imageAlt: {
       type: String,
-      default: null,
+      default: "",
     },
   },
   computed: {
-    getClasses() {
+    avatarClasses() {
       return [this.size ? `c-avatar--${this.size}` : ""]
     },
   },

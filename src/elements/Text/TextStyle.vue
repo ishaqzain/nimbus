@@ -2,8 +2,8 @@
   <component 
     class="c-text" 
     :is="wrapper" 
-    :class="getClasses"
-    :style="{'font-size': `${getSize}`}">
+    :class="textClasses"
+    :style="{'font-size': `${textSize}`}">
     <slot/>
   </component>
 </template>
@@ -37,7 +37,7 @@ export default {
     },
     /**
      * Style variation to give additional meaning.
-     * `default, disabled, strong, positive, negative`
+     * `default, light, disabled, strong`
      */
     variation: {
       type: String,
@@ -45,10 +45,10 @@ export default {
     },
   },
   computed: {
-    getClasses() {
+    textClasses() {
       return [this.variation ? `c-text--${this.variation}` : ""]
     },
-    getSize() {
+    textSize() {
       return this.fontSize
     },
   },

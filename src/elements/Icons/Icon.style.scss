@@ -1,0 +1,12 @@
+@import "../../assets/styles/settings/settings.colors";
+@import "../../assets/styles/settings/settings.manifest";
+@import "../../assets/styles/arin/2-tools/tools.rem";
+
+//
+// Pictograph Settings, for icon
+// ==========================================================================
+$global-component-namespace: "c-";
+$pictograph-asset-path-prefix: "~pictograph";
+$imported-global-settings: true;
+
+@import "~pictograph/pictograph";

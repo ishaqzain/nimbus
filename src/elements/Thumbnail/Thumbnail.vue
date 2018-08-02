@@ -2,7 +2,7 @@
   <component 
     :is="type" 
     class="c-thumbnail" 
-    :class="getClasses" 
+    :class="thumbnailClasses" 
     :src="imageUrl"
     :alt="imageAlt">
   </component>
@@ -51,7 +51,7 @@ export default {
     },
   },
   computed: {
-    getClasses() {
+    thumbnailClasses() {
       return [this.size ? `c-thumbnail--${this.size}` : ""]
     },
   },

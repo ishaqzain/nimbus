@@ -2,7 +2,7 @@
   <component
     class="c-badge"
     :is="type"
-    :class="getClasses">
+    :class="badgeClasses">
     <div class="c-badge__content">
       <slot/>
     </div>
@@ -16,7 +16,7 @@
  * Heading element provides an option to change the level of the heading.
  */
 export default {
-  name: "BadgeStyle",
+  name: "Badge",
   status: "review",
   release: "1.0.0",
   props: {
@@ -45,7 +45,7 @@ export default {
     },
   },
   computed: {
-    getClasses() {
+    badgeClasses() {
       return [this.color ? `c-badge--${this.color}` : "", this.size ? `c-badge--${this.size}` : ""]
     },
   },
@@ -60,19 +60,19 @@ export default {
   <div>
     <heading level="h4">Size Variations</heading>
     <br>
-    <badge-style size="small">9</badge-style>
-    <badge-style>99</badge-style>
-    <badge-style size="large">99</badge-style>
+    <badge size="small">9</badge>
+    <badge>99</badge>
+    <badge size="large">99</badge>
   </div>
   ```
    ```jsx
   <div>
     <heading level="h4">Color Variations</heading>
     <br>
-    <badge-style>99</badge-style>
-    <badge-style color="green">99</badge-style>
-    <badge-style color="yellow">99</badge-style>
-    <badge-style color="pink">99</badge-style>
+    <badge>99</badge>
+    <badge color="green">99</badge>
+    <badge color="yellow">99</badge>
+    <badge color="pink">99</badge>
   </div>
   ```
 </docs>
