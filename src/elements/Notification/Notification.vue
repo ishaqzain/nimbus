@@ -12,7 +12,7 @@
         {{ title }}
       </text-style>
       <div @click="close()">
-        <icon variant="close"/>
+        <cd-icon variant="close"/>
       </div>
     </component>
   </transition>
